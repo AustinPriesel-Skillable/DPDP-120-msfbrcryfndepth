@@ -76,7 +76,10 @@ reports.
     +++<https://app.fabric.microsoft.com/+++> then press
     the **Enter** button and sign in with your credentials
 
-[TABLE]
+| Credential | Value |
+|------------|-------|
+| **Username** | **+++@lab.CloudPortalCredential(User1).Username+++** |
+| **Password** | **+++@lab.CloudPortalCredential(User1).Password+++** |
 
 ![](./media/image1.png)
 
@@ -97,7 +100,11 @@ incorrect.](./media/image4.png)
 4.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
+| Setting | Value |
+|---------|-------|
+| **Name** | **+++Fabric-AppsXXXX+++** *(Replace **XXXX** with a unique number, for example, **Rayfin-Fabric1234**.)* |
+| **Advanced** | Under **License mode**, select **Fabric**. |
+| **Default storage format** | **Small dataset storage format** |
 
 ![](./media/image6.png)
 
@@ -154,13 +161,13 @@ incorrect.](./media/image4.png)
 8.  Run the following commands in your terminal and confirm each returns
     a version number:
 
-> **node --version**
+> **+++node --version+++**
 >
-> **npm --version**
+> **+++npm --version+++**
 >
-> **git --version**
+> **+++git --version+++**
 >
-> **copilot --version**
+> **+++copilot --version+++**
 
 ![](./media/image18.png)
 
@@ -169,8 +176,7 @@ incorrect.](./media/image4.png)
 ## **Task 1: Clone the lab repository**
 
 1.  Open your browser, navigate to the address bar, type or paste the
-    following URL: +++
-    https://github.com/technofocus-pte/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
+    following URL: +++https://github.com/technofocus-pte/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
 
 2.  Click on **fork** to fork the repo. Give unique name to the repo and
     click on **Create repo** button.
