@@ -1,3 +1,4 @@
+## Usecase 1- Build and Deploy the Contoso Chef Application with Rayfin
 **Scenario**
 
 Contoso Chef is a modern recipe-sharing platform that enables food
@@ -89,10 +90,12 @@ reports.
 
 1.  Open your browser, navigate to the address bar, and type or paste
     the following URL:
-    +++<https://app.fabric.microsoft.com/+++> then press
+    +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button and sign in with your credentials
-
-[TABLE]
+| Credential | Value |
+|------------|-------|
+| **Username** | **+++@lab.CloudPortalCredential(User1).Username+++** |
+| **Password** | **+++@lab.CloudPortalCredential(User1).Password+++** |
 
 ![](./media/image1.png)
 
@@ -111,7 +114,11 @@ incorrect.](./media/image3.png)
 4.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
+| Setting | Value |
+|---------|-------|
+| **Name** | **+++Rayfin-FabricXXXX+++** (Replace **XXXX** with a unique number, for example, **Rayfin-Fabric1234**.)* |
+| **Advanced** | Under **License mode**, select **Fabric**. |
+| **Default storage format** | **Small dataset storage format** |
 
 ![](./media/image5.png)
 
