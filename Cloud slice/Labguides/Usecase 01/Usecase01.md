@@ -194,13 +194,13 @@ incorrect.](./media/image3.png)
 8.  Run the following commands in your terminal and confirm each returns
     a version number:
 
-> **+++node –version+++**
+> **+++node --version+++**
 >
-> **+++npm –version+++**
+> **+++npm --version+++**
 >
-> **+++git –version+++**
+> **+++git --version+++**
 >
-> **+++copilot –version+++**
+> **+++copilot --version+++**
 
 ![](./media/image20.png)
 
@@ -390,6 +390,8 @@ you deployed in Step 4. Sign in via the popup that appears.
 
 3.  Enter the details for a new recipe of your choice. For this lab, a
     sample recipe is used to demonstrate the recipe creation process.
+
+>**Name**: Steamed Rice
 
 > **Description**: Fluffy, fool-proof steamed white rice — a simple side
 > that pairs with almost anything.
