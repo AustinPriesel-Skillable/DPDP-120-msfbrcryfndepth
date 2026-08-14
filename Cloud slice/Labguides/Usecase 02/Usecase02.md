@@ -207,7 +207,7 @@ incorrect.](./media/image4.png)
 
 > npm create -y @microsoft/rayfin@latest -- --project-name
 > field-services-app --template
-> "C:/LabFiles/template/field-services-app" --workspace-uri
+> "./template/field-services-app" --workspace-uri
 > \<workspace-uri\>
 >
 > Example:
