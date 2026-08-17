@@ -1,4 +1,5 @@
 ## Usecase 1- Build and Deploy the Contoso Chef Application with Rayfin
+
 **Scenario**
 
 Contoso Chef is a modern recipe-sharing platform that enables food
@@ -17,7 +18,7 @@ will provision Fabric resources, deploy the application, validate
 Microsoft SSO authentication, create recipes, and learn how to update
 and redeploy application components efficiently.
 
-**ntroduction**
+**Introduction**
 
 Building modern applications often requires developers to manage
 multiple services, including authentication, databases, APIs, storage,
@@ -92,10 +93,11 @@ reports.
     the following URL:
     +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button and sign in with your credentials
+
 | Credential | Value |
-|------------|-------|
-| **Username** | **+++@lab.CloudPortalCredential(User1).Username+++** |
-| **Password** | **+++@lab.CloudPortalCredential(User1).Password+++** |
+|---|---|
+| Username | +++@lab.CloudPortalCredential(User1).Username+++ |
+| Password | +++@lab.CloudPortalCredential(User1).Password+++ |
 
 ![](./media/image1.png)
 
@@ -115,10 +117,10 @@ incorrect.](./media/image3.png)
     enter the following details, and click on the **Apply** button.
 
 | Setting | Value |
-|---------|-------|
-| **Name** | **+++Rayfin-FabricXXXX+++** (Replace **XXXX** with a unique number, for example, **Rayfin-Fabric1234**.)* |
-| **Advanced** | Under **License mode**, select **Fabric**. |
-| **Default storage format** | **Small dataset storage format** |
+|---|---|
+| Name | +++Rayfin-FabricXXXX+++ (**XXXX can be a unique number**) |
+| Advanced | Under **License mode**, select **Fabric** |
+| Default storage format | **Small dataset storage format** |
 
 ![](./media/image5.png)
 
@@ -138,18 +140,20 @@ incorrect.](./media/image3.png)
     following URL:
     +++https://github.com/technofocus-pte/rayfin-on-microsoft-fabric+++
 
+> ![](./media/image9.png)
+
 2.  Click on **fork** to fork the repo. Give unique name to the repo and
     click on **Create repo** button.
 
-> ![](./media/image9.png)
->
 > ![](./media/image10.png)
+>
+> ![](./media/image11.png)
 
 3.  In your GitHub repository, click **Code** and then select the
     **Copy** icon next to the repository URL to copy the clone link for
     use in the upcoming steps.
 
-> ![](./media/image11.png)
+> ![](./media/image12.png)
 
 # Task 3: Validate Required Software Setup
 
@@ -157,39 +161,39 @@ incorrect.](./media/image3.png)
     on **Visual Studio Code**.
 
 > ![A screenshot of a computer Description automatically
-> generated](./media/image12.png)
+> generated](./media/image13.png)
 
 2.  Launch Visual Studio Code and sign in using the **Sign In** button
     located in the upper-right corner of the application window.
 
-![](./media/image13.png)
+![](./media/image14.png)
 
 3.  Click on **Continue with GitHub**
 
-![](./media/image14.png)
+![](./media/image15.png)
 
 4.  On the GitHub sign-in page, enter the provided username or email
     address and password, then click **Sign in** to authenticate and
     connect GitHub with Visual Studio Code.
 
-![](./media/image15.png)
+![](./media/image16.png)
 
-> ![](./media/image16.png)
+> ![](./media/image17.png)
 
 5.  Click **Open** to open the selected repository and begin working in
     Visual Studio Code.
 
-![](./media/image17.png)
+![](./media/image18.png)
 
 6.  In Visual Studio Code, click the **More Actions (⋯)** menu, select
     **Terminal**, and then choose **New Terminal** to open a new
     integrated terminal window
 
-> ![](./media/image18.png)
+> ![](./media/image19.png)
 
 7.  In the terminal, navigate to the **Labfiles** directory
 
-> ![](./media/image19.png)
+> ![](./media/image20.png)
 
 8.  Run the following commands in your terminal and confirm each returns
     a version number:
@@ -202,26 +206,25 @@ incorrect.](./media/image3.png)
 >
 > **+++copilot --version+++**
 
-![](./media/image20.png)
+![](./media/image21.png)
 
 # Task 4: Get the source code
 
 1.  Clone the repository and move into the app's source folder:
 
-> +++git clone
-> https://github.com/\<youraccount\>/rayfin-on-microsoft-fabric.git+++
+    +++git clone https://github.com/<youraccount>/rayfin-on-microsoft-fabric.git+++
 
-![](./media/image21.png)
+![](./media/image22.png)
 
 2.  Change the directory
 
 > **+++cd rayfin-on-microsoft-fabric/src+++**
 
-![](./media/image22.png)
+![](./media/image23.png)
 
 All remaining commands are run from this "src" folder.
 
-![](./media/image23.png)
+![](./media/image24.png)
 
 # Task 5: Install dependencies
 
@@ -233,21 +236,21 @@ All remaining commands are run from this "src" folder.
 This downloads all the packages the app needs (React, Vite, Rayfin CLI,
 etc.).
 
-![](./media/image24.png)
+![](./media/image25.png)
 
 2.  In the integrated terminal, run the following command to sign in to
     Rayfin and authenticate your deployment environment
 
-> +++npx rayfin login+++
-
-![](./media/image25.png)
+> **+++npx rayfin login+++**
 
 ![](./media/image26.png)
+
+![](./media/image27.png)
 
 3.  If your account has access to more than one Fabric tenant, pin to
     the right one:
 
-> +++npx rayfin login --tenant \<tenant-id\>+++
+> +++npx rayfin login --tenant <tenant-id>+++
 
 This opens a browser sign-in prompt — complete it with your Fabric/Entra
 ID credentials.
@@ -257,15 +260,11 @@ ID credentials.
 1.  After signing in, run the following command to start the deployment
     process:
 
-> **+++npx rayfin up+++**
-
-![](./media/image27.png)
-
 2.  In the integrated terminal, run the following command, replacing
     **\<workspace-id\>** with the **Microsoft Fabric workspace ID** that
     you saved in Task 1
 
-> +++npx rayfin up --workspace-id \<workspace-id\>+++
+      +++npx rayfin up --workspace-id <workspace-id>+++
 
 ![](./media/image28.png)
 
@@ -296,7 +295,7 @@ This can take a few minutes the first time.
 
 1.  Check the deployment status and get the hosting URL:
 
-> **npx rayfin up status**
+> **+++npx rayfin up status+++**
 
 ![](./media/image32.png)
 
@@ -314,9 +313,7 @@ create duplicates.
 1.  Open the Microsoft Fabric portal
     at +++https://app.fabric.microsoft.com+++.
 
-2.  Open
-    the Rayfin\_[Fabric**@lab.LabInstance.Id**](mailto:Fabric@lab.LabInstance.Id) workspace
-    you created in Exercise 1.
+2.  Open the Rayfin_Fabric@lab.LabInstance.Id workspace you created in Exercise 1.
 
 ![](./media/image33.png)
 
@@ -390,8 +387,6 @@ you deployed in Step 4. Sign in via the popup that appears.
 
 3.  Enter the details for a new recipe of your choice. For this lab, a
     sample recipe is used to demonstrate the recipe creation process.
-
->**Name**: Steamed Rice
 
 > **Description**: Fluffy, fool-proof steamed white rice — a simple side
 > that pairs with almost anything.
@@ -504,23 +499,90 @@ you deployed in Step 4. Sign in via the popup that appears.
 
 ![](./media/image61.png)
 
-# Task 11: Clean up resources
+# Task 11: Create Data agent
+
+1.  Now, click on **RayfinFabricXXX** on the left-sided navigation pane.
+
+![](./media/image62.png)
+
+2.  In the **Fabric** home page, select **+New item.** In the Filter by
+    item type search box, enter +++**data agent**+++ and select the Data
+    agent
+
+![](./media/image63.png)
+
+3.  Enter **+++Rayfin_agent+++** as the Data agent name and
+    select **Create**.
+
+![](./media/image64.png)
+
+4.  In **Rayfin_agent** page, select **Add a data source**
+
+![](./media/image65.png)
+
+5.  In the OneLake catalog tab, select the **contoso-chef** SQL database
+    and select **Add.**
+
+![](./media/image66.png)
+
+![](./media/image67.png)
+
+6.  Select all tables
+
+![](./media/image68.png)
+
+7.  Enter the following text and click on the **Submit icon** as shown
+    in the below image.
+
+> +++How many recipes are available in the Contoso Chef application?+++
+
+![](./media/image69.png)
+
+![](./media/image70.png)
+
+8.  Enter the following text and click on the **Submit** icon as shown
+    in the below image.
+
++++What are the newest recipes added to the platform?+++
+
+![](./media/image71.png)
+
+![](./media/image72.png)
+
+> +++Which cuisine is most popular among users?+++
+
+![](./media/image73.png)
+
+![](./media/image74.png)
+
+9.  Select **Publish**.
+
+![](./media/image75.png)
+
+![](./media/image76.png)
+
+10. After publishing, verify the success message and select **View
+    publishing details** to review the agent deployment.
+
+![](./media/image77.png)
+
+# Task 12: Clean up resources
 
 1.  Select your workspace, the **Rayfin_FabricXXXX** from the left-hand
     navigation menu. It opens the workspace item view.
 
-> ![](./media/image62.png)
+> ![](./media/image78.png)
 
 2.  Select the ... option under the workspace name and
     select **Workspace settings**.
 
-![](./media/image63.png)
+![](./media/image79.png)
 
 3.  Navigate to the bottom of the General tab and select **Remove this
     workspace**.
 
-![](./media/image64.png)
+![](./media/image80.png)
 
-![](./media/image65.png)
+![](./media/image81.png)
 
-![](./media/image66.png)
+![](./media/image82.png)
