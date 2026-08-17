@@ -82,6 +82,51 @@ Before starting, make sure you have:
 
 4.  A terminal / command-line application (PowerShell, Terminal, etc.).
 
+ ## Prerequisites
+
+- **GitHub Account: You are expected to have your own GitHub login
+  credentials.  
+  If you do not have an account, please create one by visiting:  
+  +++https://github.com/signup?user_email=&source=form-home-signup+++**
+
+## Task 0: Create a GitHub account
+
+In this task, you create a new **Github account** with the same tenant
+credentials that you have used in this lab.
+
+1.  Navigate to the GitHub with this link
+    +++https://github.com/+++ and click on **Sign up** to proceed
+    further.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga1.png)
+
+2.  Now, to create a new GitHub account, enter
+    the **email**, **password** and a unique **username** and click
+    on **Continue** button.
+
+    ![A screenshot of a login box AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga2.png)
+
+3.  Start the **verification** **puzzle** by following the instruction
+    on the screen. Click on **Submit.**
+
+4.  Enter the **verification** **code** you've received on your mail.
+
+    ![A screenshot of a email form AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga3.png)
+
+5.  Now, with your credentials sign-in to GitHub and click on **Sign in.**
+
+    ![A screenshot of a login page AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga4.png)
+
+6.  You have successfully created a new account on GitHub.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga5.png)
+
+
 # Task 1: Create a Fabric workspace
 
 In this task, you create a Fabric workspace. The workspace contains all
