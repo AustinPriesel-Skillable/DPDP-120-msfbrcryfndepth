@@ -61,6 +61,51 @@ writing SQL or complex analytics code
 
 - Understand how Fabric Intelligence, Data Agents, and Rayfin work
   together to accelerate AI-powered application development
+  ## Prerequisites
+
+- **GitHub Account: You are expected to have your own GitHub login
+  credentials.  
+  If you do not have an account, please create one by visiting:  
+  +++https://github.com/signup?user_email=&source=form-home-signup+++**
+
+## Task 0: Create a GitHub account
+
+In this task, you create a new **Github account** with the same tenant
+credentials that you have used in this lab.
+
+1.  Navigate to the GitHub with this link
+    +++https://github.com/+++ and click on **Sign up** to proceed
+    further.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga1.png)
+
+2.  Now, to create a new GitHub account, enter
+    the **email**, **password** and a unique **username** and click
+    on **Continue** button.
+
+    ![A screenshot of a login box AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga2.png)
+
+3.  Start the **verification** **puzzle** by following the instruction
+    on the screen. Click on **Submit.**
+
+4.  Enter the **verification** **code** you've received on your mail.
+
+    ![A screenshot of a email form AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga3.png)
+
+5.  Now, with your credentials sign-in to GitHub and click on **Sign
+    in.**
+
+    ![A screenshot of a login page AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga4.png)
+
+6.  You have successfully created a new account on GitHub.
+
+    ![A screenshot of a computer AI-generated content may be
+incorrect.](https://raw.githubusercontent.com/technofocus-pte/fbrciqdtagntsfrntr/refs/heads/main/Cloudslice/Labguide/Usecase%2004/media/imga5.png)
+
 
 # **Exercise 1: Set Up Your Environment**
 
@@ -73,13 +118,13 @@ reports.
 
 1.  Open your browser, navigate to the address bar, and type or paste
     the following URL:
-    +++<https://app.fabric.microsoft.com/+++> then press
+    +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button and sign in with your credentials
 
 | Credential | Value |
-|------------|-------|
-| **Username** | **+++@lab.CloudPortalCredential(User1).Username+++** |
-| **Password** | **+++@lab.CloudPortalCredential(User1).Password+++** |
+|---|---|
+| Username | +++@lab.CloudPortalCredential(User1).Username+++ |
+| Password | +++@lab.CloudPortalCredential(User1).Password+++ |
 
 ![](./media/image1.png)
 
@@ -101,10 +146,10 @@ incorrect.](./media/image4.png)
     enter the following details, and click on the **Apply** button.
 
 | Setting | Value |
-|---------|-------|
-| **Name** | **+++Fabric-AppsXXXX+++** *(Replace **XXXX** with a unique number, for example, **Rayfin-Fabric1234**.)* |
-| **Advanced** | Under **License mode**, select **Fabric**. |
-| **Default storage format** | **Small dataset storage format** |
+|---|---|
+| Name | +++Fabric-AppsXXXX+++ (**XXXX can be a unique number**) |
+| Advanced | Under **License mode**, select **Fabric** |
+| Default storage format | **Small dataset storage format** |
 
 ![](./media/image6.png)
 
@@ -188,14 +233,13 @@ incorrect.](./media/image4.png)
 3.  In your terminal, from your working folder (e.g. C:\Labfiles), clone
     the lab repository:
 
-> +++git clone https://github.com/\<your repo
-> name\>/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
+ +++git clone https://github.com/<your repo name>/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++ 
 
 ![](./media/image21.png)
 
 4.  Change the directory
 
-**cd ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric**
+**+++cd ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric+++**
 
 ![](./media/image22.png)
 
@@ -204,18 +248,13 @@ incorrect.](./media/image4.png)
 1.  Type (do not run yet) the following command, leaving
     \<workspace-uri\> in place for now. Adjust the --template path if
     your clone is elsewhere:
+```
+npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template " ./template/field-services-app" --workspace-uri <workspace-uri>
+```
 
-> npm create -y @microsoft/rayfin@latest -- --project-name
-> field-services-app --template
-> "./template/field-services-app" --workspace-uri
-> \<workspace-uri\>
->
 > Example:
 
-npm create -y @microsoft/rayfin@latest -- --project-name
-field-services-app --template "./template/field-services-app"
---workspace-uri
-https://app.fabric.microsoft.com/groups/dae5eeaf-f597-4686-b15d-6c82e4d99725
+npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template "./template/field-services-app" --workspace-uri https://app.fabric.microsoft.com/groups/dae5eeaf-f597-4686-b15d-6c82e4d99725
 
 ![](./media/image23.png)
 
@@ -287,13 +326,13 @@ it will be changing when you ask it to generate code.
 1.  In the Visual Studio Code terminal, run this command to initialize a
     new Git repository:
 
-> **git init**
+> **+++git init+++**
 >
 > ![](./media/image32.png)
 
 2.  Next, add all the files to the staging area with this command:
 
-> **git add .**
+> **+++git add .+++**
 >
 > ![](./media/image33.png)
 >
@@ -301,7 +340,7 @@ it will be changing when you ask it to generate code.
 
 3.  Finally, make your first commit with this command:
 
-> **git commit -m "Initial commit - bootstrap from template"**
+> **+++git commit -m "Initial commit - bootstrap from template"+++**
 >
 > ![](./media/image35.png)
 >
@@ -330,7 +369,17 @@ Tip: Skim the files. You do not need to understand every line yet.
 
 2.  Notice these files and folders:
 
-[TABLE]
+| Folder / File | Why it matters |
+|---|---|
+| **rayfin/rayfin.yml** | Turns Rayfin managed services on or off. |
+| **rayfin/data/** | Defines the backend data model. |
+| **src/** | Contains the React + TypeScript frontend. |
+| **src/services/** | Connects the frontend to Rayfin auth and data. |
+| **src/pages/** | Contains the main app pages. |
+| **src/components/ui/** | Contains reusable UI components. |
+| **data/** | Contains the original app spec and seed dataset. |
+| **package.json** | Lists scripts such as **dev**, **rayfin:dev**, **rayfin:db**, **dev:fabric**, **build**, and **test**. |
+| **AGENTS.md** | Gives guidance for AI coding agents. |
 
 3.  We will review the Rayfin configuration and data model in more
     detail in the next tasks, review the rest of the files lightly for
@@ -352,7 +401,12 @@ uses.
 
 3.  Notice these services:
 
-[TABLE]
+| Service | What it does in this app |
+|---|---|
+| **auth** | Two providers are enabled: **password** (used for local development) and **fabric** (Microsoft Entra SSO, used when deployed to Microsoft Fabric). |
+| **data** | Creates a managed SQL database for the app. |
+| **storage** | Is turned off in this template, but can be enabled for blob storage. |
+| **staticHosting** | Hosts the built frontend from *dist/* after deployment. |
 
 4.  Do not edit this file yet. For now, just learn where the settings
     live.
@@ -461,7 +515,7 @@ to it.
 
 2.  Provision the Fabric backend by running:
 
-> **npx rayfin up --encryption-fallback-enabled**
+> **+++npx rayfin up --encryption-fallback-enabled+++**
 >
 > ![](./media/image42.png)
 >
@@ -487,7 +541,7 @@ The frontend is the React app that users interact with.
 
 1.  In the same terminal, start the Vite dev server:
 
-> **npm run dev**
+> **+++npm run dev+++**
 >
 > ![](./media/image46.png)
 
@@ -568,20 +622,27 @@ The same app also includes a manager view.
 
 1.  Open a new browser tab and navigate to the manager URL:
 
-<http://localhost:5173/manager/>
++++http://localhost:5173/manager/+++
 
 ![](./media/image57.png)
 
 2.  Review the manager view and create a new work order by completing
     the form and selecting **Create order**.
 
+> Name: +++Adam+++
+>
+> Address:+++1234 Example Street 3 Suite 100 Springfield,IL 627045
+> United States+++
+>
+> Task : +++Hang large painting in living room+++
+>
 > ![](./media/image58.png)
 >
 > ![](./media/image59.png)
 
 3.  Assign the work order to your Service Pro profile.
 
-![](./media/image60.png)
+> ![](./media/image60.png)
 
 4.  Select **Jobs** in the top navigation bar.
 
@@ -824,15 +885,17 @@ the backend schema change yet.
 1.  In the GitHub Copilot CLI prompt, paste the following implementation
     request:
 
-> Implement a comments feature for work orders. Comments should provide
-> a history of interventions so service pros and the manager can
-> communicate and ask questions about a work order. Each comment must
-> include id, userId, createdAt, workOrderId, and content. Keep the
-> comments section collapsed by default in the UI. Only the service pro
-> assigned to the work order and the manager can view and add comments
-> for a work order. Generate the code only; do not apply the backend
-> schema change.
->
+```
+Create a Comment entity for the comments feature. The entity should:
+1. Be located at rayfin/data/workOrderComment.ts
+2. Have these fields: id (uuid), content (text, min:1 max:1000), userId (text), createdAt (date), workOrderId (uuid)
+3. Include a one-to-one relationship to WorkOrder via the workOrderId field
+4. Use @entity() and @role('authenticated', 'read', 'create') decorators
+5. Register the Comment entity in rayfin/data/schema.ts (import it, add to FieldServiceSchema type, add to schema array)
+6. Ensure all other code that uses client.data.Comment has the correct imports
+
+Generate the code only; do not apply the backend schema change.
+```
 > ![](./media/image88.png)
 >
 > ![](./media/image89.png)
@@ -840,83 +903,62 @@ the backend schema change yet.
 > ![](./media/image90.png)
 >
 > ![](./media/image91.png)
->
-> ![](./media/image92.png)
 
-9.  Copilot just showed the code. Create it manually:
+9.  If you face any issue where Copilot only shows the code instead of
+    creating the files, create the files manually
 
 10. In the Explorer, right-click rayfin/data/ and select **New File**.
 
-![](./media/image93.png)
+![](./media/image92.png)
 
 11. Name it **WorkOrderComment.ts.**
 
-![](./media/image94.png)
+![](./media/image93.png)
 
 12. Copy this into it:
 
-> import {
->
->   date,
->
->   entity,
->
->   one,
->
->   role,
->
->   text,
->
->   uuid,
->
-> } from '@microsoft/rayfin-core';
->
-> import { WorkOrder } from './WorkOrder.js';
->
-> @entity()
->
-> @role('authenticated', '\*')
->
-> export class Comment {
->
->   @uuid() id!: string;
->
->   @text({ min: 1, max: 1000 }) content!: string;
->
->   @text() userId!: string;
->
->   @uuid() workOrderId!: string;
->
->   @one(() =\> WorkOrder, { optional: true }) workOrder?: WorkOrder;
->
->   @date() createdAt!: Date;
->
-> }
->
-> ![](./media/image95.png)
->
-> ![](./media/image96.png)
-
-13. Make sure schema.ts has:
-
-import { ServicePro } from './ServicePro.js';
+```
+import {
+  date,
+  entity,
+  one,
+  role,
+  text,
+  uuid,
+} from '@microsoft/rayfin-core';
 
 import { WorkOrder } from './WorkOrder.js';
 
+@entity()
+@role('authenticated', '*')
+export class Comment {
+  @uuid() id!: string;
+  @text({ min: 1, max: 1000 }) content!: string;
+  @text() userId!: string;
+  @uuid() workOrderId!: string;
+  @one(() => WorkOrder, { optional: true }) workOrder?: WorkOrder;
+  @date() createdAt!: Date;
+}
+```
+> ![](./media/image94.png)
+>
+> ![](./media/image95.png)
+
+13. Make sure schema.ts has:
+
+```
+import { ServicePro } from './ServicePro.js';
+import { WorkOrder } from './WorkOrder.js';
 import { Comment } from './WorkOrderComment.js';
 
 export type FieldServiceSchema = {
-
-ServicePro: ServicePro;
-
-WorkOrder: WorkOrder;
-
-Comment: Comment;
-
+  ServicePro: ServicePro;
+  WorkOrder: WorkOrder;
+  Comment: Comment;
 };
 
-export const schema = \[ServicePro, WorkOrder, Comment\];
-
+export const schema = [ServicePro, WorkOrder, Comment];
+```
 ## Task 4: Review the generated implementation
 
 Before applying backend changes, review the files generated by GitHub
@@ -924,7 +966,7 @@ Copilot CLI.
 
 1.  Open the Visual Studio Code Source Control view.
 
-![Visual Studio Code Source Control](./media/image97.png)
+![Visual Studio Code Source Control](./media/image96.png)
 
 2.  Review each changed file.
 
@@ -937,20 +979,17 @@ Copilot CLI.
 
 Expected changes include:
 
-\- A new file under \`rayfin/data/\`, such as \`WorkOrderComment.ts\`
+- A new file under `rayfin/data/`, such as `WorkOrderComment.ts`
+- An update to `rayfin/data/schema.ts`
+- New or updated files under `src/components/`, `src/pages/`, `src/hooks/`, or `src/services/`
+- A comments user interface that is collapsed by default
 
-\- An update to \`rayfin/data/schema.ts\`
 
-\- New or updated files under \`src/components/\`, \`src/pages/\`,
-\`src/hooks/\`, or \`src/services/\`
-
-\- A comments user interface that is collapsed by default
+![](./media/image97.png)
 
 ![](./media/image98.png)
 
 ![](./media/image99.png)
-
-![](./media/image100.png)
 
 Note
 
@@ -967,23 +1006,23 @@ schema to the Microsoft Fabric backend and redeploy the app.
 
 1.  Exit GitHub Copilot CLI by typing **/exit** in the prompt.
 
-> ![](./media/image101.png)
+> ![](./media/image100.png)
 
 2.  In a terminal in the **field-services-app** folder, apply the
     database schema update:
 
-> npx rayfin up db apply
+> +++**npx rayfin up db apply**+++
+
+![](./media/image101.png)
 
 ![](./media/image102.png)
 
 ![](./media/image103.png)
 
-![](./media/image104.png)
-
 3.  Confirm that the command completes successfully and creates the
     new **WorkOrderComments** table.
 
-![](./media/image105.png)
+![](./media/image104.png)
 
 \[!Note\] If the command warns about destructive changes, stop and
 review the listed operations before continuing. Adding a new entity
@@ -994,20 +1033,19 @@ should not require dropping or renaming existing columns.
     highlighted workOrder line – 421 .update statement as required for
     the lab exercise.
 
-await client.data.WorkOrder.update({ id: workOrderId }, { note:
-nextNote, updatedAt: new Date() });
++++await client.data.WorkOrder.update({ id: workOrderId }, { note: nextNote, updatedAt: new Date() });+++
 
-![](./media/image106.png)
+![](./media/image105.png)
 
 4.  Deploy the updated backend API metadata and frontend:
 
-> **npx rayfin up --encryption-fallback-enabled**
+> **+++npx rayfin up --encryption-fallback-enabled+++**
+>
+> ![](./media/image106.png)
 >
 > ![](./media/image107.png)
 >
 > ![](./media/image108.png)
->
-> ![](./media/image109.png)
 
 \[!Note\] The full rayfin up flow can also apply pending database
 migrations. In this lab, you applied the database change first so the
@@ -1020,56 +1058,56 @@ hosted app.
 
 1.  Start the local Vite dev server if it's not already running:
 
-> npm run dev
+> +++npm run dev+++
 >
-> ![](./media/image110.png)
+> ![](./media/image109.png)
 
 2.  Open the local app at the Vite dev server URL, such
     as <http://localhost:5173>.
 
-> ![](./media/image111.png)
+> ![](./media/image110.png)
 >
-> ![](./media/image112.png)
+> ![](./media/image111.png)
 
 3.  Open a work order assigned to your Service Pro profile.
 
-> ![](./media/image113.png)
+> ![](./media/image112.png)
 
 4.  Expand the new **Comments** section.
 
-> ![](./media/image114.png)
+> ![](./media/image113.png)
 
 5.  Add a comment to the work order.
 
-> ![](./media/image115.png)
+> ![](./media/image114.png)
 >
-> ![](./media/image116.png)
+> ![](./media/image115.png)
 
 6.  Navigate to the manager view at **/manager/.**
 
-> ![](./media/image117.png)
+> ![](./media/image116.png)
 
 7.  Open the same work order and confirm that the manager can see the
     comment thread.
 
-> ![](./media/image118.png)
+> ![](./media/image117.png)
 
 8.  Add a reply from the manager view.
 
 9.  Return to the Service Pro view and confirm that the reply appears in
     the same thread.
 
-> ![](./media/image119.png)
+> ![](./media/image118.png)
 >
-> ![](./media/image120.png)
+> ![](./media/image119.png)
 
 10. Open the live hosting URL from Exercise 5 and repeat a quick smoke
     test to confirm that the deployed app also includes the comments
     feature.
 
-> ![](./media/image121.png)
+> ![](./media/image120.png)
 >
-> ![](./media/image122.png)
+> ![](./media/image121.png)
 
 # Exercise 7: Seed Data for Analysis
 
@@ -1095,16 +1133,17 @@ By completing this exercise, you will:
 The template includes an authenticated admin page at /\_admin/ that can
 generate a larger dataset from src/data/field-service-seed.json.
 
-1.  In the hosted app, navigate directly to /\_admin/ by appending it to
+1.  In the hosted app, navigate directly to /_admin/
+2.   by appending it to
     the hosting URL.
 
-> ![](./media/image123.png)
+> ![](./media/image122.png)
 
 2.  Confirm that the admin page is accessible while you are signed in.
 
 3.  Select **Seed data**.
 
-> ![](./media/image124.png)
+> ![](./media/image123.png)
 
 4.  Wait for the operation to complete.
 
@@ -1114,7 +1153,7 @@ out or fetch), you can still continue with the next tasks. 
 5.  Confirm that the completion message reports the number of generated
     service pros and work orders.
 
-> ![](./media/image125.png)
+> ![](./media/image124.png)
 
 \[!Tip\] The admin page can also reset the data back to a minimal sample
 dataset. Use reset only if you need to return to a small baseline.
@@ -1131,12 +1170,12 @@ visible in the main app experiences.
 
 3.  Open the manager view at /manager/.
 
-> ![](./media/image126.png)
+> ![](./media/image125.png)
 
 4.  Confirm that the manager view now shows a larger set of service pros
     and work orders.
 
-> ![](./media/image127.png)
+> ![](./media/image126.png)
 
 5.  Open a few records and verify that seeded data includes varied
     skills, locations, and operational states.
@@ -1176,26 +1215,26 @@ accurate queries.
 1.  Navigate to the Microsoft Fabric portal and open the workspace you
     created for this lab.
 
-> ![](./media/image128.png)
+> ![](./media/image127.png)
 
 2.  Select **+ New item** from the top menu and in the dialog, search
     and select **Semantic model**.
 
-> ![](./media/image129.png)
+> ![](./media/image128.png)
 
 3.  In the semantic model creation experience, select **OneLake
     catalog** as the data source type.
 
-> ![](./media/image130.png)
+> ![](./media/image129.png)
 
 4.  Select the **SQL Database** item and select **Connect**.
 
-![](./media/image131.png)
+![](./media/image130.png)
 
 5.  Provide a name for the semantic model, in this
     case, **FieldServices**.
 
-> ![](./media/image132.png)
+> ![](./media/image131.png)
 
 6.  Select the **ServicePros**, **WorkOrders**,
     and **WorkOrderComments** tables to include in the model and
@@ -1205,7 +1244,7 @@ accurate queries.
 a semantic model please wait a few minutes, refresh your page and create
 the semantic model again.
 
-![](./media/image133.png)
+![](./media/image132.png)
 
 \[!Note\] This process will take a few minutes to complete.
 
@@ -1214,29 +1253,29 @@ the semantic model again.
     the **servicePro_id** column from **WorkOrders** onto
     the **id** column in **ServicePros**.
 
-> ![](./media/image134.png)
+> ![](./media/image133.png)
 
 8.  Power BI Service will automatically determine the cardinality and
     cross-filtering direction. Select **Save** in the New relationship
     dialog.
 
-> ![](./media/image135.png)
+> ![](./media/image134.png)
 >
-> ![](./media/image136.png)
+> ![](./media/image135.png)
 
 9.  Define the relationship between
     the **WorkOrders** and **WorkOrderComments** tables by dragging
     the **id** column from **WorkOrders** onto
     the **workOrder_id** column in **WorkOrderComments**.
 
-> ![](./media/image137.png)
+> ![](./media/image136.png)
 
 10. Again, confirm the relationship settings in the New relationship
     dialog and select **Save**.
 
-> ![](./media/image138.png)
+> ![](./media/image137.png)
 >
-> ![](./media/image139.png)
+> ![](./media/image138.png)
 
 11. Rename key columns to clear, readable labels. For each of the three
     tables rename the following columns:
@@ -1251,23 +1290,23 @@ the semantic model again.
 
     - **id** → ServiceProId
 
-![](./media/image140.png)
+![](./media/image139.png)
 
-![](./media/image141.png)
+![](./media/image140.png)
 
 2)  WorkOrders:
 
     - **id** → WorkOrderId
 
-> ![](./media/image142.png)
+> ![](./media/image141.png)
 >
-> ![](./media/image143.png)
+> ![](./media/image142.png)
 
 - **scheduledAt** → ScheduledDate
 
-> ![](./media/image144.png)
+> ![](./media/image143.png)
 >
-> ![](./media/image145.png)
+> ![](./media/image144.png)
 
 13. Select each table and add descriptions to the tables from
     the **Properties** pane. The descriptions are as follows:
@@ -1276,18 +1315,18 @@ the semantic model again.
       customer locations. Each has a set of skills and may be assigned
       to work orders.
 
-> ![](./media/image146.png)
+> ![](./media/image145.png)
 
 - **WorkOrders:** Work orders for field service jobs. Each has a status,
   may be assigned to a Service Pro, and has a scheduled date.
 
-> ![](./media/image147.png)
+> ![](./media/image146.png)
 
 - **WorkOrderComments:** Comments on work orders. Each comment is
   associated with a single work order and includes content, the
   authoring user, and a timestamp.
 
-![](./media/image148.png)
+![](./media/image147.png)
 
 \[!Tip\] Adding descriptions is optional but highly recommended, as the
 data agent uses them to understand your data and answer questions
@@ -1298,29 +1337,29 @@ answer quality.
 
 1.  From the left navigation bar, select Fabric-AppsXXX.
 
-![](./media/image149.png)
+![](./media/image148.png)
 
 2.  Switch to your workspace on the left navigation pane and select **+
     New item** from the top menu.
 
-> ![](./media/image150.png)
+> ![](./media/image149.png)
 
 3.  In the dialog, search for and select **Data agent**.
 
-> ![](./media/image151.png)
+> ![](./media/image150.png)
 
 4.  Name the agent **field-services-agent**.
 
-> ![](./media/image152.png)
+> ![](./media/image151.png)
 
 5.  In the **Explorer** panel, select **Add Data \> Data Source**.
 
-> ![](./media/image153.png)
+> ![](./media/image152.png)
 
 6.  In the **Add data source** dialog, select the **Semantic model** you
     created in Task 1 and select **Add**.
 
-![](./media/image154.png)
+![](./media/image153.png)
 
 7.  In the explorer panel, select the tables you want the agent to have
     access to. Check the boxes next to **ServicePros**, **WorkOrders**,
@@ -1329,15 +1368,11 @@ answer quality.
 8.  Select **Agent Iinstructions** in the toolbar and add the following
     domain context, deleting any placeholder text:
 
+> ![](./media/image154.png)
+```
+This is a field-services work-order management app. Service Pros perform jobs at customer addresses. WorkOrders have a status (pending, assigned, in_progress, completed, needs_followup, cancelled) and may be assigned to one ServicePro. Use Scheduled date for time-based questions about when jobs happen.
+```
 > ![](./media/image155.png)
->
-> **This is a field-services work-order management app. Service Pros
-> perform jobs at customer addresses. WorkOrders have a status (pending,
-> assigned, in_progress, completed, needs_followup, cancelled) and may
-> be assigned to one ServicePro. Use Scheduled date for time-based
-> questions about when jobs happen.**
->
-> ![](./media/image156.png)
 
 9.  Close the Agent Instructions editor.
 
@@ -1349,44 +1384,43 @@ production data.
 1.  Check the boxes next to **ServicePros**, **WorkOrders**,
     and **WorkOrderComments**.
 
-![](./media/image157.png)
+![](./media/image156.png)
 
 2.  In the agent chat pane, ask the following questions one at a time
     and review the results:
 
 > How many work orders do we have in total?
 >
-> ![](./media/image158.png)
+> ![](./media/image157.png)
 
 3.  For each response, expand the steps completed to see the generated
     DAX query and the returned answer.
 
-> ![](./media/image159.png)
+> ![](./media/image158.png)
 >
 > +++How many work orders are assigned to each Service Pro?+++
 
-![](./media/image160.png)
+![](./media/image159.png)
 
-![](./media/image161.png)
+![](./media/image160.png)
 
 > +++List all work orders scheduled for the next 7 days.+++
 
+![](./media/image161.png)
+
 ![](./media/image162.png)
+
++++Which Service Pros have plumbing in their skills and have no in-progress jobs?+++
 
 ![](./media/image163.png)
 
-+++Which Service Pros have plumbing in their skills and have no
-in-progress jobs?+++
-
 ![](./media/image164.png)
-
-![](./media/image165.png)
 
 4.  Publish the data agent by selecting **Publish** from the top
     toolbar. Once published, the agent can be accessed from other Fabric
     experiences such as notebooks and the standalone Copilot experience.
 
-> ![](./media/image166.png)
+> ![](./media/image165.png)
 
 5.  In the publish dialog, provide the following description for the
     agent:
@@ -1394,9 +1428,9 @@ in-progress jobs?+++
 This agent answers questions about field service work orders, including
 assigned service professionals, job statuses, and scheduled dates.
 
-![](./media/image167.png)
+![](./media/image166.png)
 
-![](./media/image168.png)
+![](./media/image167.png)
 
 \[!Tip\] The description is important as it helps other agents and
 copilot experiences understand the agent's purpose and capabilities. A
@@ -1405,39 +1439,39 @@ for relevant questions.
 
 6.  Select the **Standalone Copilot** from the left navigation pane.
 
-> ![](./media/image169.png)
+> ![](./media/image168.png)
 
 7.  In the Copilot text input, ask a question that the agent should be
     able to answer, such as:
 
 > +++Which Service Pro has the most completed jobs?+++
 
-![](./media/image170.png)
+![](./media/image169.png)
 
-![](./media/image171.png)
+![](./media/image170.png)
 
 ## Task 4: Clean up resources
 
 1.  Select your workspace, the **Fabric_AppsXXXX** from the left-hand
     navigation menu. It opens the workspace item view.
 
-![](./media/image172.png)
+![](./media/image171.png)
 
 2.  Select the ... option under the workspace name and
     select **Workspace settings**.
 
-![](./media/image173.png)
+![](./media/image172.png)
 
 3.  Navigate to the bottom of the General tab and select **Remove this
     workspace**.
+
+![](./media/image173.png)
 
 ![](./media/image174.png)
 
 ![](./media/image175.png)
 
 ![](./media/image176.png)
-
-![](./media/image177.png)
 
 **Summary**
 
