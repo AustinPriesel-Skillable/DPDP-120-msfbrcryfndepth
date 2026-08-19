@@ -61,21 +61,21 @@ In this task, you create a new **Github account** with the same tenant credentia
 
 1. Navigate to the GitHub with this link +++https://github.com/+++ and click on **Sign up** to proceed further.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/mediaimga1.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga1.png)
 
 1. Now, to create a new GitHub account, enter the +++email+++, **password** and a unique **username** and click on **Continue** button.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/mediaimga2.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga2.png)
 
 1. Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
 
 1. Enter the +++verification+++ **code** you've received on your mail.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/mediaimga3.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga3.png)
 
 1. Now, with your credentials sign-in to GitHub and click on **Sign in.**
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/mediaimga4.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga4.png)
 
 1. You have successfully created a new account on GitHub.
 
