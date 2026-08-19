@@ -41,21 +41,21 @@ In this lab, you will build the **ZAVA Interior Designing App**, provision a man
 
     1. Navigate to the GitHub with this link +++https://github.com/+++ and click on **Sign up** to proceed further.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/mediaimga1.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga1.png)
 
 1. Now, to create a new GitHub account, enter the +++email+++, **password** and a unique **username** and click on **Continue** button.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/mediaimga2.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga2.png)
 
 1. Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
 
 1. Enter the +++verification+++ **code** you've received on your mail.
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/mediaimga3.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga3.png)
 
 1. Now, with your credentials sign-in to GitHub and click on **Sign in.**
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/mediaimga4.png)
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga4.png)
 
 1. You have successfully created a new account on GitHub.
 
