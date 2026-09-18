@@ -1,12 +1,12 @@
-## Usecase 2 - Build and Deploy the Contoso Chef Application with Rayfin
+# Usecase 2 - Build and Deploy the Contoso Chef Application with Rayfin
 
-### Scenario
+## Scenario
 
 Contoso Chef is a modern recipe-sharing platform that enables food enthusiasts to discover recipes, create and manage their own culinary content, upload recipe images, and collaborate with other users through likes and comments. To accelerate application development while minimizing infrastructure complexity, Contoso Chef leverages **Rayfin on Microsoft Fabric** to provide a fully managed backend, authentication, database services, and application hosting.
 
 As a developer, your goal is to deploy the Contoso Chef application to Microsoft Fabric, connect it to a managed Rayfin backend, and explore how Rayfin simplifies the process of building, deploying, and maintaining scalable full-stack applications. Throughout this lab, you will provision Fabric resources, deploy the application, validate Microsoft SSO authentication, create recipes, and learn how to update and redeploy application components efficiently.
 
-### Introduction
+## Introduction
 
 Building modern applications often requires developers to manage multiple services, including authentication, databases, APIs, storage, and application hosting. Rayfin simplifies this process by providing a managed backend platform that integrates directly with Microsoft Fabric, enabling developers to focus on application functionality rather than infrastructure management.
 
@@ -15,25 +15,15 @@ In this lab, you will deploy the **Contoso Chef** sample application using Rayfi
 ### Objectives
 
 - Create and configure a Microsoft Fabric workspace.
-
 - Validate the required development tools and environment.
-
 - Clone and configure the Contoso Chef application source code.
-
 - Install project dependencies and authenticate with Rayfin.
-
 - Deploy a managed backend and application using Rayfin on Microsoft Fabric.
-
 - Verify the deployment and access the application through Microsoft Entra SSO.
-
 - Run the application locally while connecting to the deployed Fabric backend.
-
 - Create, edit, and manage recipes within the Contoso Chef application.
-
 - Upload media assets and interact with recipe content through comments and likes.
-
 - Redeploy frontend and database updates using Rayfin deployment commands.
-
 - Understand how Rayfin accelerates full-stack application development on Microsoft Fabric.
 
 
@@ -55,7 +45,7 @@ Before starting, make sure you have:
 - **GitHub Account: You are expected to have your own GitHub login credentials. If you do not have an account, please create one by visiting: +++https://github.com/signup?user_email=&source=form-home-signup+++**
 
 
-## Task 0: Create a GitHub account
+### Task 0: Create a GitHub account
 
 In this task, you create a new **Github account** with the same tenant credentials that you have used in this lab.
 
@@ -63,13 +53,13 @@ In this task, you create a new **Github account** with the same tenant credentia
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga1.png)
 
-1. Now, to create a new GitHub account, enter the +++email+++, **password** and a unique **username** and click on **Continue** button.
+1. Now, to create a new GitHub account, enter the **email**, **password** and a unique **username** and click on **Continue** button.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga2.png)
 
 1. Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
 
-1. Enter the +++verification+++ **code** you've received on your mail.
+1. Enter the **verification code** you've received on your mail.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/imga3.png)
 
@@ -80,7 +70,7 @@ In this task, you create a new **Github account** with the same tenant credentia
 1. You have successfully created a new account on GitHub.
 
 
-# Task 1: Create a Fabric workspace
+### Task 1: Create a Fabric workspace
 
 In this task, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
 
@@ -97,7 +87,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. In the portal, switch to **Fabric** Mode before proceeding to create workspace.
 
-    ![A screenshot of a computer AI-generated content may be incorrect.](./media/image3.png)
+    ![A screenshot of a computer AI-generated content may be incorrect.](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image3.png)
 
 1. In the Workspaces pane, click on **+New workspace** tile
 
@@ -117,12 +107,12 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image7.png)
 
-1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like https://app.fabric.microsoft.com/groups/*{workspace-id}*.
+1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like **https://app.fabric.microsoft.com/groups/*{workspace-id}*.**
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image8.png)
 
 
-# Task 2: Clone the lab repository
+### Task 2: Clone the lab repository
 
 1. Open your browser, navigate to the address bar, type or paste the following URL: +++https://github.com/technofocus-pte/rayfin-on-microsoft-fabric+++
 
@@ -139,11 +129,11 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image12.png)
 
 
-# Task 3: Validate Required Software Setup
+### Task 3: Validate Required Software Setup
 
 1. In your Windows search box, type Visual Studio, then click on **Visual Studio Code**.
 
-    ![A screenshot of a computer Description automatically > generated](./media/image13.png)
+    ![A screenshot of a computer Description automatically > generated](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image13.png)
 
 1. Launch Visual Studio Code and sign in using the **Sign In** button located in the upper-right corner of the application window.
 
@@ -173,22 +163,19 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Run the following commands in your terminal and confirm each returns a version number:
 
-    `node --version`
-    >
-    `npm --version`
-    >
-    `git --version`
-    >
-    > **+++copilot --version+++**
+    - `node --version`
+    - `npm --version`
+    - `git --version`
+    - `copilot --version`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image21.png)
 
 
-# Task 4: Get the source code
+### Task 4: Get the source code
 
 1. Clone the repository and move into the app's source folder:
 
-    +++git clone https://github.com/<youraccount>/rayfin-on-microsoft-fabric.git+++
+    `git clone https://github.com/<youraccount>/rayfin-on-microsoft-fabric.git`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image22.png)
 
@@ -203,7 +190,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image24.png)
 
 
-# Task 5: Install dependencies
+### Task 5: Install dependencies
 
 1. In the integrated terminal, run the following command to install all required project dependencies:
 
@@ -228,28 +215,23 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     This opens a browser sign-in prompt — complete it with your Fabric/Entra ID credentials.
 
 
-# Task 6: Deploy the backend and the app
+### Task 6: Deploy the backend and the app
 
 1. After signing in, run the following command to start the deployment process:
 
 1. In the integrated terminal, run the following command, replacing ***{workspace-id}*** with the **Microsoft Fabric workspace ID** that you saved in Task 1
 
-    +++npx rayfin up --workspace-id <workspace-id>+++
+    `npx rayfin up --workspace-id <workspace-id>`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image28.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image29.png)
 
     This single command:
-
     - Provisions a Rayfin item in your Fabric workspace
-
     - Applies the database schema
-
     - Builds the Vite frontend (npm run build:fabric)
-
     - Deploys the static site bundle
-
     - Writes the live URLs and publishable key into a new .env.fabric file
 
     This can take a few minutes the first time.
@@ -262,7 +244,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image31.png)
 
 
-# Task 7: Open and verify the deployed app
+### Task 7: Open and verify the deployed app
 
 1. Check the deployment status and get the hosting URL:
 
@@ -272,7 +254,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     Open the printed URL in a browser and sign in with your Microsoft Fabric account. On first sign-in, the app automatically imports a 100-recipe catalogue into the database (takes about 30 seconds, with a progress banner). This "self-seeding" is idempotent, so revisiting later won't create duplicates.
 
-    > **Note on anonymous access:** At release, unauthenticated (anonymous)
+    >[!Knowledge] **Note on anonymous access:** At release, unauthenticated (anonymous)
     > access to Fabric data sources is not supported. Every visitor —
     > including the discover page and "unlisted" recipe links — must sign in
     > via Microsoft Fabric SSO.
@@ -292,7 +274,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image36.png)
 
 
-# Task 8: Run the app locally against the deployed backend
+### Task 8: Run the app locally against the deployed backend
 
 1. For local development with hot-reload:
 
@@ -308,9 +290,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Select the **Sign in with Microsoft** button, sign in with the same Microsoft account you used for Fabric:
 
-
-    - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
-
+    - **Username**: +++@lab.CloudPortalCredential(User1).Username+++
     - **TAP**: +++@lab.CloudPortalCredential(User1).AccessToken+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image39.png)
@@ -337,7 +317,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image46.png)
 
 
-# Task 9: Explore core features
+### Task 9: Explore core features
 
 1. Browsing the discover page (public recipes) and select My recipes
 
@@ -347,40 +327,37 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Enter the details for a new recipe of your choice. For this lab, a sample recipe is used to demonstrate the recipe creation process.
 
-    > **Description**: Fluffy, fool-proof steamed white rice — a simple side
-    > that pairs with almost anything.
-    >
-    > **Type**: main (or "side", if that option exists)
-    >
-    > **Cuisine**: Global / Asian
-    >
-    > **Origin country**: (optional — leave blank or pick where you learned
-    > it)
-    >
-    > For the ingredients and steps sections further down the form:
-    >
-    > **Ingredients:**
-    >
-    > 1 cup white rice (basmati or jasmine)
-    >
-    > 2 cups water
-    >
-    > 1/2 tsp salt
-    >
-    > 1 tsp butter or oil (optional)
-    >
-    > **Steps:**
+    **Description**: `Fluffy, fool-proof steamed white rice — a simple side that pairs with almost anything.`
 
+    **Type**: main (or "side", if that option exists)
+
+    **Cuisine**: `Global / Asian`
+
+    **Origin country**: (optional — leave blank or pick where you learned it)
+
+    For the ingredients and steps sections further down the form:
+
+    ```
+    - Ingredients:
+
+    1 cup white rice (basmati or jasmine)
+
+    2 cups water
+
+    1/2 tsp salt
+
+    1 tsp butter or oil (optional)
+    ```
+
+    ```
+    - Steps:
 
     - Rinse the rice under cold water until it runs clear, to remove excess starch.
-
     - Add rice, water, salt, and butter/oil to a pot; bring to a boil uncovered.
-
     - Once boiling, reduce heat to low, cover tightly, and simmer for 15 minutes without lifting the lid.
-
     - Remove from heat and let it rest, covered, for 5 minutes.
-
     - Fluff with a fork before serving.
+    ```
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image48.png)
 
@@ -404,7 +381,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image54.png)
 
 
-# Task 10: Redeploying after changes
+### Task 10: Redeploying after changes
 
 1. Deploy the updated backend API metadata and frontend:
 
@@ -414,13 +391,13 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. To redeploy only the frontend (static web application) after making UI changes, run the following command in the integrated terminal
 
-    > **+++npx rayfin up staticapp deploy+++** \# Redeploy frontend only
+    `npx rayfin up staticapp deploy` \# Redeploy frontend only
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image56.png)
 
 1. To apply only the database schema changes without redeploying other project components, run the following command in the integrated terminal
 
-    > **+++npx rayfin up db apply+++** \# Apply schema changes only
+    `npx rayfin up db apply` \# Apply schema changes only
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image57.png)
 
@@ -447,17 +424,17 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image61.png)
 
 
-# Task 11: Create Data agent
+### Task 11: Create Data agent
 
 1. Now, click on +++RayfinFabric@lab.LabInstance.Id+++ on the left-sided navigation pane.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image62.png)
 
-1. In the **Fabric** home page, select **+New item.** In the Filter by item type search box, enter **+++data agent+++** and select the Data agent
+1. In the **Fabric** home page, select **+New item.** In the Filter by item type search box, enter +++data agent+++ and select the Data agent
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image63.png)
 
-1. Enter **+++Rayfin_agent+++** as the Data agent name and select **Create**.
+1. Enter +++Rayfin_agent+++ as the Data agent name and select **Create**.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image64.png)
 
@@ -477,7 +454,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Enter the following text and click on the **Submit icon** as shown in the below image.
 
-    +++How many recipes are available in the Contoso Chef application?+++
+    `How many recipes are available in the Contoso Chef application?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image69.png)
 
@@ -485,13 +462,13 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Enter the following text and click on the **Submit** icon as shown in the below image.
 
-    +++What are the newest recipes added to the platform?+++
+    `What are the newest recipes added to the platform?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image71.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image72.png)
 
-    +++Which cuisine is most popular among users?+++
+    `Which cuisine is most popular among users?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image73.png)
 
@@ -508,7 +485,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2001/media/image77.png)
 
 
-# Task 12: Clean up resources
+### Task 12: Clean up resources
 
 1. Select your workspace, the +++Rayfin_Fabric@lab.LabInstance.Id+++ from the left-hand navigation menu. It opens the workspace item view.
 
