@@ -1,4 +1,4 @@
-## Usecase 1 - Build and Deploy the Contoso Chef Application with Rayfin
+## Usecase 2 - Build and Deploy the Contoso Chef Application with Rayfin
 
 ### Scenario
 
