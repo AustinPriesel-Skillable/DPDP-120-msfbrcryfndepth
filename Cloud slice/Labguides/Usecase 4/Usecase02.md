@@ -1,4 +1,4 @@
-# **Usecase 2 - Build ZAVA Interior Designing App with intelligent insights using Fabric IQ,Data Agents, and Rayfin​**
+# **Usecase 4 - Build ZAVA Interior Designing App with intelligent insights using Fabric IQ,Data Agents, and Rayfin​**
 
 ### Scenario
 
