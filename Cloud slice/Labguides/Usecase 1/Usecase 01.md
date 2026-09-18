@@ -1,3 +1,5 @@
+## Usecase 01-Develop a CRUD-enabled Todo application with Rayfin in Fabric Apps
+
 **Introduction**
 
 This use case demonstrates how to develop and deploy a CRUD (Create,
@@ -61,7 +63,10 @@ reports.
     +++<https://app.fabric.microsoft.com/+++> then press
     the **Enter** button and sign in with your credentials
 
-[TABLE]
+| Credential | Value |
+|---|---|
+| Username | `[+++@lab.CloudPortalCredential](mailto:+++@lab.CloudPortalCredential)(User1).Username+++` |
+| Password | `[+++@lab.CloudPortalCredential](mailto:+++@lab.CloudPortalCredential)(User1).Password+++` |
 
 ![](./media/image1.png)
 
@@ -80,7 +85,11 @@ incorrect.](./media/image3.png)
 4.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
+| Setting | Value |
+|---|---|
+| Name | `Rayfin-Fabric-TodoappXXXX` (**XXXX can be a unique number**) |
+| Advanced | Under **License mode**, select **Fabric** |
+| Default storage format | **Small dataset storage format** |
 
 ![](./media/image5.png)
 
