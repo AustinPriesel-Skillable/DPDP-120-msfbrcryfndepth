@@ -1,12 +1,12 @@
 # **Usecase 4 - Build ZAVA Interior Designing App with intelligent insights using Fabric IQ,Data Agents, and Rayfin​**
 
-### Scenario
+## Scenario
 
 ZAVA Interiors is a growing interior design and home improvement company that wants to modernize how it manages customer projects, designer assignments, work orders, and collaboration across teams. The company plans to build an intelligent Interior Designing application using Microsoft Fabric, Rayfin, GitHub Copilot, and Fabric Intelligence capabilities.
 
 As a Fabric Developer, you are tasked with rapidly building and deploying a full-stack business application using Rayfin's managed backend services. The application will enable interior designers and project managers to manage projects, collaborate through comments, analyze operational data, and leverage AI-powered insights using Fabric Data Agents and Fabric Intelligence.
 
-### Introduction
+## Introduction
 
 Microsoft Fabric provides a unified platform for building intelligent business applications by combining data, AI, analytics, and application services. Rayfin further accelerates development by providing managed backend capabilities such as authentication, data APIs, storage, and deployment.
 
@@ -15,54 +15,41 @@ In this lab, you will build the **ZAVA Interior Designing App**, provision a man
 ### Objectives
 
 - Create and configure a Microsoft Fabric workspace.
-
 - Bootstrap a new application using the Rayfin application template.
-
 - Explore Rayfin architecture, configuration, and data models.
-
 - Provision and deploy a managed backend using Microsoft Fabric.
-
 - Run, test, and validate the application locally and in Fabric.
-
 - Use GitHub Copilot CLI to generate and implement new application features.
-
 - Extend the application with schema-backed entities and business functionality.
-
 - Seed application data for analytics and reporting scenarios.
-
 - Build a Semantic Model using data stored in Microsoft Fabric.
-
 - Configure and publish a Fabric Data Agent.
-
 - Use natural language queries to generate intelligent business insights.
-
 - Understand how Fabric Intelligence, Data Agents, and Rayfin work together to accelerate AI-powered application development
 
+- Navigate to the GitHub with this link +++https://github.com/+++ and click on **Sign up** to proceed further.
 
-    1. Navigate to the GitHub with this link +++https://github.com/+++ and click on **Sign up** to proceed further.
+![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga1.png)
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga1.png)
+- Now, to create a new GitHub account, enter the **email**, **password** and a unique **username** and click on **Continue** button.
 
-1. Now, to create a new GitHub account, enter the +++email+++, **password** and a unique **username** and click on **Continue** button.
+![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga2.png)
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga2.png)
+- Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
+- Enter the **verification code** you've received on your mail.
 
-1. Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
+![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga3.png)
 
-1. Enter the +++verification+++ **code** you've received on your mail.
+- Now, with your credentials sign-in to GitHub and click on **Sign in.**
 
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga3.png)
+![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga4.png)
 
-1. Now, with your credentials sign-in to GitHub and click on **Sign in.**
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/imga4.png)
-
-1. You have successfully created a new account on GitHub.
+- You have successfully created a new account on GitHub.
 
 
-# **Exercise 1: Set Up Your Environment**
+## **Exercise 1: Set Up Your Environment**
 
-## Task 1: Create a Fabric workspace
+### Task 1: Create a Fabric workspace
 
 In this task, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
 
@@ -101,12 +88,12 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image8.png)
 
-1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like https://app.fabric.microsoft.com/groups/*{workspace-id}*.
+1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like +++https://app.fabric.microsoft.com/groups/*{workspace-id}*.+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image9.png)
 
 
-## Task 2: Validate Required Software Setup
+### Task 2: Validate Required Software Setup
 
 1. In your Windows search box, type Visual Studio, then click on **Visual Studio Code**.
 
@@ -140,21 +127,17 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Run the following commands in your terminal and confirm each returns a version number:
 
-
     - `node --version`
-
     - `npm --version`
-
     - `git --version`
-
     - `copilot --version`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image18.png)
 
 
-# **Exercise 2: Bootstrap the App from a Template**
+## **Exercise 2: Bootstrap the App from a Template**
 
-## **Task 1: Clone the lab repository**
+### **Task 1: Clone the lab repository**
 
 1. Open your browser, navigate to the address bar, type or paste the following URL: +++https://github.com/technofocus-pte/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
 
@@ -166,7 +149,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. In your terminal, from your working folder (e.g. C:\Labfiles), clone the lab repository:
 
-    +++git clone https://github.com/<your repo name>/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
+    `git clone https://github.com/<your repo name>/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image21.png)
 
@@ -176,15 +159,16 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image22.png)
 
-## **Task 2: Bootstrap a new Rayfin project from the Field Services template**
+
+### **Task 2: Bootstrap a new Rayfin project from the Field Services template**
 
 1. Type (do not run yet) the following command, leaving *{workspace-uri}* in place for now. Adjust the --template path if your clone is elsewhere:
 
     `npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template " ./template/field-services-app" --workspace-uri <workspace-uri>`
 
     > Example:
-
-    npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template "./template/field-services-app" --workspace-uri https://app.fabric.microsoft.com/groups/dae5eeaf-f597-4686-b15d-6c82e4d99725
+    >
+    > npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template "./template/field-services-app" --workspace-uri https://app.fabric.microsoft.com/groups/dae5eeaf-f597-4686-b15d-6c82e4d99725
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image23.png)
 
@@ -194,13 +178,11 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Create a new **field-services-app** folder in your current directory and copy the template files into it
 
-
     - Wire the project to your Fabric workspace using the --workspace-uri you provided
-
     - Run npm install in the new project folder (this can take a couple of minutes on first run)
 
 
-## Task 3: Explore the generated project and make your first commit
+### Task 3: Explore the generated project and make your first commit
 
 In this task, you will inspect the generated project, initialize a Git repository, and make your first commit. This is important for GitHub Copilot CLI in later exercises, as it will show you clean diffs and what it will be changing when you ask it to generate code.
 
@@ -228,13 +210,9 @@ In this task, you will inspect the generated project, initialize a Git repositor
 
 1. Review the project structure. It should look something like this:
 
-
     - **src/**: React + TypeScript frontend
-
     - **rayfin/**: Rayfin backend configuration (*rayfin.yml*, data entities)
-
     - **data/**: Seed data and **the original prompt + dataset used to generate this template** (worth a look if you're curious how it was built)
-
     - **package.json**: Dependencies and scripts for the project, including **build** and **dev**.
 
 
@@ -250,7 +228,7 @@ In this task, you will inspect the generated project, initialize a Git repositor
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image33.png)
 
-   +++git config --global user.email "your-email@example.com"+++
+    `git config --global user.email "your-email@example.com"`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image34.png)
 
@@ -263,24 +241,20 @@ In this task, you will inspect the generated project, initialize a Git repositor
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image36.png)
 
 
-# Exercise 3: Explore the App Template
+## Exercise 3: Explore the App Template
 
 In this exercise, you will quickly inspect the app you created in Exercise 2.
 
 You will look at:
-
 - the main project folders
-
 - the Rayfin configuration file
-
 - the Rayfin data model
-
 - the frontend files you may use later
 
 
 >[!Tip] Skim the files. You do not need to understand every line yet.
 
-## Task 1: Explore the project structure
+### Task 1: Explore the project structure
 
 1. In Visual Studio Code, expand the **field-services-app** folder.
 
@@ -303,7 +277,7 @@ You will look at:
 1. Ignore the generated configuration files for now. You will come back to the important files later.
 
 
-## Task 2: Explore the Rayfin YAML configuration
+### Task 2: Explore the Rayfin YAML configuration
 
 The **rayfin/rayfin.yml** file tells Rayfin which services this app uses.
 
@@ -325,7 +299,7 @@ The **rayfin/rayfin.yml** file tells Rayfin which services this app uses.
 1. Do not edit this file yet. For now, just learn where the settings live.
 
 
-## Task 3: Explore the Data Model
+### Task 3: Explore the Data Model
 
 The **rayfin/data/** folder defines the database tables for this app.
 
@@ -333,11 +307,8 @@ The **rayfin/data/** folder defines the database tables for this app.
 
 1. You should see these files:
 
-
     - **schema.ts**
-
     - **ServicePro.ts**
-
     - **WorkOrder.ts**
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image38.png)
@@ -349,13 +320,9 @@ The **rayfin/data/** folder defines the database tables for this app.
 
 1. Open **ServicePro.ts** and review the **ServicePro** class and notice these decorators:
 
-
     - **@entity()** creates a database table.
-
     - **@role('authenticated', '\*')** allows signed-in users to create, read, update, and delete rows.
-
     - **@uuid()**, **@text(...)**, and **@date()** define columns.
-
     - **user_id** stores the signed-in user's identity from auth.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image40.png)
@@ -365,11 +332,8 @@ The **rayfin/data/** folder defines the database tables for this app.
 
 1. Open **WorkOrder.ts** and review the **WorkOrder** class and notice that it has similar decorators to **ServicePro**, but also has some new ones:
 
-
     - **@set(...)** limits *status* to known values, such as **pending** and **completed**.
-
     - **@one(() =\> ServicePro, { optional: true })** links a work order to a service pro.
-
     - **servicePro_id** stores the selected service pro ID for the app to read and write.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image41.png)
@@ -378,7 +342,7 @@ The **rayfin/data/** folder defines the database tables for this app.
 1. Remember this rule: these TypeScript entity classes are the source of truth for the database schema.
 
 
-## Task 4 (Optional): Explore the Frontend Code
+### Task 4 (Optional): Explore the Frontend Code
 
 You do not need to understand the full frontend in this exercise.
 
@@ -386,34 +350,27 @@ You do not need to understand the full frontend in this exercise.
 
 1. If you have time, look at these files:
 
-
     - **services/ServiceContainer.ts**: singleton that bootstraps the Rayfin client and auto-selects the right auth provider (password locally, Fabric Entra in production).
-
     - **services/rayfin/RayfinFieldService.ts**: CRUD operations for *ServicePro* and *WorkOrder* using the typed Rayfin data API.
 
 
 1. Keep these ideas in mind:
 
-
     - The frontend uses types generated from the Rayfin schema.
-
     - If you change a field in **rayfin/data/**, TypeScript can help find frontend code that needs updating.
-
     - The app does not use a hand-written REST client.
 
 
-# Exercise 4: Run the App Locally
+## Exercise 4: Run the App Locally
 
 In this exercise, you will run the Field Services app locally.
 
 You will:
-
 - **Provision a Fabric backend** for the app with one command
-
 - Start the **frontend dev server** locally Then you will sign in, create a Service Pro profile, complete a work order, and test the manager view.
 
 
-## Task 1: Provision the Fabric backend
+### Task 1: Provision the Fabric backend
 
 The **rayfin up** command provisions a managed backend (database, auth, data API) in your Fabric workspace and wires your local frontend to talk to it.
 
@@ -438,7 +395,7 @@ The **rayfin up** command provisions a managed backend (database, auth, data API
     >[!Tip] The CLI saves the deployment details to **rayfin/.deployments.json** so subsequent **rayfin up** runs update the same deployment instead of creating a new one.
 
 
-## Task 2: Start the frontend
+### Task 2: Start the frontend
 
 The frontend is the React app that users interact with.
 
@@ -459,15 +416,13 @@ The frontend is the React app that users interact with.
 1. Confirm that the app sign-in page opens.
 
 
-## Task 3: Sign up as a Service Pro
+### Task 3: Sign up as a Service Pro
 
 The authentication page includes a **"Sign in with Microsoft"** button, and the backend uses Microsoft Entra (Fabric SSO) for sign-in.
 
 1. Select the **Sign in with Microsoft** button. Since you already have an active SSO session from Exercise 1, you should be signed in automatically without needing to enter credentials again. Otherwise, sign in with the same Microsoft account you used for Fabric:
 
-
-    - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
-
+    - **Username**: +++@lab.CloudPortalCredential(User1).Username+++
     - **TAP**: +++@lab.CloudPortalCredential(User1).AccessToken+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image48.png)
@@ -508,7 +463,7 @@ The authentication page includes a **"Sign in with Microsoft"** button, and the 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image56.png)
 
 
-## Task 4: Explore the manager view
+### Task 4: Explore the manager view
 
 The same app also includes a manager view.
 
@@ -520,12 +475,12 @@ The same app also includes a manager view.
 
 1. Review the manager view and create a new work order by completing the form and selecting **Create order**.
 
-    > Name: +++Adam+++
-    >
-    > Address:+++1234 Example Street 3 Suite 100 Springfield,IL 627045
-    > United States+++
-    >
-    > Task : +++Hang large painting in living room+++
+    Name: +++Adam+++
+
+    Address: +++1234 Example Street 3 Suite 100 Springfield,IL 627045
+    United States+++
+
+    Task: +++Hang large painting in living room+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image58.png)
 
@@ -546,24 +501,20 @@ The same app also includes a manager view.
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image62.png)
 
 
-# Exercise 5: Verify the Production Deployment on Microsoft Fabric
+## Exercise 5: Verify the Production Deployment on Microsoft Fabric
 
 In Exercise 4, you ran **npx rayfin up** to provision the Rayfin backend in Microsoft Fabric. That command also built the frontend by running **npm run build:fabric**, uploaded the compiled app to Microsoft Fabric's managed static hosting, and deployed the schema.
 
 In this exercise, you will verify the live deployment created by **rayfin up**. There is no separate production publishing step for this lab: each **rayfin up** updates the deployment associated with your selected Microsoft Fabric workspace.
 
 You will:
-
 - Open the hosted app URL generated by **rayfin up**
-
 - Sign in with Microsoft Fabric
-
 - Confirm that the hosted app uses the same backend, database, and schema as the app you tested locally
-
 - Optionally inspect the deployed app and SQL Database items in the Microsoft Fabric portal
 
 
-## Task 1: Open the live app
+### Task 1: Open the live app
 
 1. In the terminal output from the **npx rayfin up** command you ran in Exercise 4\>Task 4, find the **static hosting URL** printed by the CLI. The URL should look similar to https://*{random-prefix}*.webapp.rayfin….com.
 
@@ -591,12 +542,10 @@ You will:
 
     At this point, you have verified that the app is live. Any user with access to your Microsoft Fabric workspace can open the hosted app and use the deployed backend.
 
-    Tip
-
-    **Need separate dev and production environments?** Run npx rayfin up against a second Microsoft Fabric workspace to create a separate deployment with its own backend, database, and frontend. Then switch between deployments anytime with npx rayfin up switch. Each deployment is tracked independently in **rayfin/.deployments.json**.
+    >[!Tip] **Need separate dev and production environments?** Run npx rayfin up against a second Microsoft Fabric workspace to create a separate deployment with its own backend, database, and frontend. Then switch between deployments anytime with npx rayfin up switch. Each deployment is tracked independently in **rayfin/.deployments.json**.
 
 
-## Task 2: Inspect the deployment in Fabric
+### Task 2: Inspect the deployment in Fabric
 
 Let's take a look at the deployed app and database in the Microsoft Fabric portal.
 
@@ -621,28 +570,22 @@ Let's take a look at the deployed app and database in the Microsoft Fabric porta
     ![Fabric SQL Database tables](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image72.png)
 
 
-# Exercise 6: Add a Feature with Copilot CLI
+## Exercise 6: Add a Feature with Copilot CLI
 
 In the previous exercises, you deployed the Field Services app to Microsoft Fabric and confirmed that the hosted app uses the same Rayfin backend as your local development experience. In this exercise, you will use GitHub Copilot CLI to implement a schema-backed comments feature for work orders.
 
 The comments feature gives each work order a conversation thread where service pros and managers can discuss job details over time. Implementing this feature requires changes across the Rayfin data model, permissions, typed data access, and React user interface.
 
 By completing this exercise, you will:
-
 - Review the project-specific agent instructions that guide GitHub Copilot CLI.
-
 - Launch GitHub Copilot CLI from the Field Services app project.
-
 - Generate a Rayfin-backed **Comment** entity and comments user interface.
-
 - Review the generated schema, permission, data access, and frontend changes.
-
 - Apply the schema update to the Microsoft Fabric backend.
-
 - Redeploy the app and validate the comments workflow locally and in the hosted app.
 
 
-## Task 1: Review the project agent instructions
+### Task 1: Review the project agent instructions
 
 The app template includes agent instructions that help GitHub Copilot CLI generate Rayfin code that follows the project's conventions.
 
@@ -661,7 +604,7 @@ The Rayfin agent skill provides domain guidance for entities, decorators, permis
     >[!Tip] The template installs the Rayfin agent skill automatically. If you start from a blank project in the future, install the agent files by running npx rayfin init ai-files install from the project folder.
 
 
-## Task 2: Launch GitHub Copilot CLI
+### Task 2: Launch GitHub Copilot CLI
 
 Start GitHub Copilot CLI from the app project folder so it can read the project files, agent instructions, and Rayfin configuration.
 
@@ -671,7 +614,7 @@ Start GitHub Copilot CLI from the app project folder so it can read the project 
 
 1. Launch GitHub Copilot CLI:
 
-    +++copilot --yolo+++
+    `copilot --yolo`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image76.png)
 
@@ -712,7 +655,7 @@ Start GitHub Copilot CLI from the app project folder so it can read the project 
     >[!Tip] The model selection applies to the current GitHub Copilot CLI session. If you exit and start GitHub Copilot CLI again, repeat this step.
 
 
-## Task 3: Generate the comments feature
+### Task 3: Generate the comments feature
 
 Use GitHub Copilot CLI to generate the comments feature without applying the backend schema change yet.
 
@@ -735,7 +678,7 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image89.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image90.png)
-    
+  
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image91.png)
 
 1. If you face any issue where Copilot only shows the code instead of creating the files, create the files manually
@@ -775,7 +718,7 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
     ```
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image94.png)
-    
+  
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image95.png)
 
 1. Make sure schema.ts has:
@@ -795,7 +738,7 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
     ```
 
 
-## Task 4: Review the generated implementation
+### Task 4: Review the generated implementation
 
 Before applying backend changes, review the files generated by GitHub Copilot CLI.
 
@@ -810,7 +753,6 @@ Before applying backend changes, review the files generated by GitHub Copilot CL
 1. If you prefer the terminal, run **git status** or **git diff** from the **field-services-app** folder to inspect the same changes.
 
     Expected changes include:
-
     - A new file under `rayfin/data/`, such as `WorkOrderComment.ts`
     - An update to `rayfin/data/schema.ts`
     - New or updated files under `src/components/`, `src/pages/`, `src/hooks/`, or `src/services/`
@@ -822,11 +764,10 @@ Before applying backend changes, review the files generated by GitHub Copilot CL
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image99.png)
 
-
     The implementation should rely on Rayfin decorators, schema generation, permission policies, and the typed client. You should not need to create a hand-written REST endpoint, migration script, or authorization middleware for this feature.
 
 
-## Task 5: Apply the schema update and redeploy
+### Task 5: Apply the schema update and redeploy
 
 The implementation request asked GitHub Copilot CLI to generate code without applying backend changes. To test the feature, apply the new schema to the Microsoft Fabric backend and redeploy the app.
 
@@ -836,7 +777,7 @@ The implementation request asked GitHub Copilot CLI to generate code without app
 
 1. In a terminal in the **field-services-app** folder, apply the database schema update:
 
-    > **+++npx rayfin up db apply+++**
+    `npx rayfin up db apply`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image101.png)
 
@@ -869,7 +810,7 @@ The implementation request asked GitHub Copilot CLI to generate code without app
     >[!Note] The full rayfin up flow can also apply pending database migrations. In this lab, you applied the database change first so the schema update is visible as a separate step.
 
 
-## Task 6: Validate the comments workflow
+### Task 6: Validate the comments workflow
 
 Test the comments feature from both the local development app and the hosted app.
 
@@ -922,22 +863,19 @@ Test the comments feature from both the local development app and the hosted app
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image121.png)
 
 
-# Exercise 7: Seed Data for Analysis
+## Exercise 7: Seed Data for Analysis
 
 In Exercise 6, you implemented and deployed a schema-backed comments feature. In this exercise, you will seed the backend with a richer dataset for the analysis-focused steps that follow.
 
 Seeding data provides a realistic set of service pros, work orders, and statuses so the next analysis-focused exercises have meaningful data to query.
 
 By completing this exercise, you will:
-
 - Use the built-in admin experience to seed the database.
-
 - Confirm that the app now includes a larger, more realistic dataset.
-
 - Optionally add additional comments to improve downstream analysis scenarios.
 
 
-## Task 1: Open the admin page and seed the database
+### Task 1: Open the admin page and seed the database
 
 The template includes an authenticated admin page at **admin** that can generate a larger dataset from src/data/field-service-seed.json.
 
@@ -962,7 +900,7 @@ The template includes an authenticated admin page at **admin** that can generate
     >[!Tip] The admin page can also reset the data back to a minimal sample dataset. Use reset only if you need to return to a small baseline.
 
 
-## Task 2: Validate the seeded dataset in the app
+### Task 2: Validate the seeded dataset in the app
 
 After the seed operation completes, confirm that the larger dataset is visible in the main app experiences.
 
@@ -981,24 +919,20 @@ After the seed operation completes, confirm that the larger dataset is visible i
 1. Open a few records and verify that seeded data includes varied skills, locations, and operational states.
 
 
-# Exercise 8: Explore Data with Fabric Intelligence
+## Exercise 8: Explore Data with Fabric Intelligence
 
 In Exercise 7, you seeded the database with a realistic production dataset. In this exercise, you will use Microsoft Fabric intelligence capabilities to query that data using natural language.
 
 The Microsoft Fabric SQL Database provisioned by Rayfin is a first-class citizen in your Fabric workspace. You will build a Power BI semantic model over it, publish it to Fabric, and create a **Fabric data agent** that lets you ask questions like "Which Service Pro has the most completed jobs?" without writing a single line of SQL.
 
 By completing this exercise, you will:
-
 - Build and publish a semantic model over the service pro, work order, and comments tables.
-
 - Create a Fabric data agent backed by the semantic model.
-
 - Query the agent with natural-language questions about your production data.
-
 - Optionally call the agent from a Fabric notebook using the Fabric Data Agent SDK.
 
 
-## Task 1: Build a Semantic model
+### Task 1: Build a Semantic model
 
 A semantic model gives the data agent a clean, well-described view of your data — including table relationships, friendly column names, and descriptions so it can translate natural-language questions into accurate queries.
 
@@ -1055,23 +989,20 @@ A semantic model gives the data agent a clean, well-described view of your data 
 1. To rename a column, select it in the **Data** view, then expand each table to view its columns. Right-click the column and select **Rename**.
 
     1)  ServicePros:
-
-
-    - **id** → ServiceProId
+    - **id** → `ServiceProId`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image139.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image140.png)
 
     2)  WorkOrders:
-
-    - **id** → WorkOrderId
+    - **id** → `WorkOrderId`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image141.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image142.png)
 
-    - **scheduledAt** → ScheduledDate
+    - **scheduledAt** → `ScheduledDate`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image143.png)
 
@@ -1080,22 +1011,22 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
 1. Select each table and add descriptions to the tables from the **Properties** pane. The descriptions are as follows:
 
-    - **ServicePros:** Service professionals who perform jobs at customer locations. Each has a set of skills and may be assigned to work orders.
+    - **ServicePros:** `Service professionals who perform jobs at customer locations. Each has a set of skills and may be assigned to work orders.`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image145.png)
 
-    - **WorkOrders:** Work orders for field service jobs. Each has a status, may be assigned to a Service Pro, and has a scheduled date.
+    - **WorkOrders:** `Work orders for field service jobs. Each has a status, may be assigned to a Service Pro, and has a scheduled date.`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image146.png)
 
-    - **WorkOrderComments:** Comments on work orders. Each comment is associated with a single work order and includes content, the authoring user, and a timestamp.
+    - **WorkOrderComments:** `Comments on work orders. Each comment is associated with a single work order and includes content, the authoring user, and a timestamp.`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image147.png)
 
     >[!Tip] Adding descriptions is optional but highly recommended, as the data agent uses them to understand your data and answer questions accurately. Spend a few minutes here, it pays back tenfold in agent answer quality.
 
 
-## Task 2: Create a Fabric data agent
+### Task 2: Create a Fabric data agent
 
 1. From the left navigation bar, select +++Fabric-Apps@lab.LabInstance.Id.+++
 
@@ -1109,7 +1040,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image150.png)
 
-1. Name the agent +++field-services-agent+++.
+1. Name the agent `field-services-agent`.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image151.png)
 
@@ -1134,7 +1065,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 1. Close the Agent Instructions editor.
 
 
-## Task 3: Query the agent with natural-language questions
+### Task 3: Query the agent with natural-language questions
 
 Use the agent's chat interface to ask questions about your seeded production data.
 
@@ -1151,20 +1082,20 @@ Use the agent's chat interface to ask questions about your seeded production dat
 1. For each response, expand the steps completed to see the generated DAX query and the returned answer.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image158.png)
-    
-    +++How many work orders are assigned to each Service Pro?+++
+  
+    `How many work orders are assigned to each Service Pro?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image159.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image160.png)
 
-    +++List all work orders scheduled for the next 7 days.+++
+    `List all work orders scheduled for the next 7 days.`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image161.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image162.png)
 
-    +++Which Service Pros have plumbing in their skills and have no in-progress jobs?+++
+    `Which Service Pros have plumbing in their skills and have no in-progress jobs?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image163.png)
 
@@ -1176,7 +1107,7 @@ Use the agent's chat interface to ask questions about your seeded production dat
 
 1. In the publish dialog, provide the following description for the agent:
 
-    This agent answers questions about field service work orders, including assigned service professionals, job statuses, and scheduled dates.
+    `This agent answers questions about field service work orders, including assigned service professionals, job statuses, and scheduled dates.`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image166.png)
 
@@ -1190,14 +1121,14 @@ Use the agent's chat interface to ask questions about your seeded production dat
 
 1. In the Copilot text input, ask a question that the agent should be able to answer, such as:
 
-    +++Which Service Pro has the most completed jobs?+++
+    `Which Service Pro has the most completed jobs?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image169.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image170.png)
 
 
-## Task 4: Clean up resources
+### Task 4: Clean up resources
 
 1. Select your workspace, the +++Fabric_Apps@lab.LabInstance.Id+++ from the left-hand navigation menu. It opens the workspace item view.
 
@@ -1218,7 +1149,7 @@ Use the agent's chat interface to ask questions about your seeded production dat
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%2002/media/image176.png)
 
 
-### Summary
+## Summary
 
 In this lab, you successfully developed and deployed the ZAVA Interior Designing application using Microsoft Fabric and Rayfin. You learned how to rapidly create a modern business application with managed authentication, database services, and deployment capabilities. Using GitHub Copilot, you enhanced the application with additional functionality while minimizing manual development effort.
 
