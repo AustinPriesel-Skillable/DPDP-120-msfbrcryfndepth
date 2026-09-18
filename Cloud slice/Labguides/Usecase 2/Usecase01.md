@@ -26,7 +26,6 @@ In this lab, you will deploy the **Contoso Chef** sample application using Rayfi
 - Redeploy frontend and database updates using Rayfin deployment commands.
 - Understand how Rayfin accelerates full-stack application development on Microsoft Fabric.
 
-
 ### Prerequisites
 
 Before starting, make sure you have:
@@ -39,8 +38,7 @@ Before starting, make sure you have:
 
 1. A terminal / command-line application (PowerShell, Terminal, etc.).
 
- ## Prerequisites
-
+## Prerequisites
 
 - **GitHub Account: You are expected to have your own GitHub login credentials. If you do not have an account, please create one by visiting: +++https://github.com/signup?user_email=&source=form-home-signup+++**
 
