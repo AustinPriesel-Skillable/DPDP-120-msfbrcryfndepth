@@ -59,7 +59,10 @@ reports.
     +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button and sign in with your credentials
 
-[TABLE]
+| Credential | Value |
+|---|---|
+| Username | `[+++@lab.CloudPortalCredential](mailto:+++@lab.CloudPortalCredential)(User1).Username+++` |
+| Password | `[+++@lab.CloudPortalCredential](mailto:+++@lab.CloudPortalCredential)(User1).Password+++` |
 
 ![](./media/image1.png)
 
@@ -80,7 +83,11 @@ incorrect.](./media/image3.png)
 4.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
+| Setting | Value |
+|---|---|
+| Name | `Rayfin-Fabric-TodoappXXXX` (**XXXX can be a unique number**) |
+| Advanced | Under **License mode**, select **Fabric** |
+| Default storage format | **Small dataset storage format** |
 
 ![](./media/image6.png)
 
@@ -97,7 +104,7 @@ incorrect.](./media/image3.png)
 1.  Open your browser, navigate to the address bar, type or paste the
     following URL:
 
-+++https://github.com/technofocus-pte/TF-Rayfin +++
++++https://github.com/technofocus-pte/TF-Rayfin+++
 
 2.  Click on **fork** to fork the repo. Give unique name to the repo and
     click on **Create repo** button.
@@ -145,7 +152,7 @@ incorrect.](./media/image3.png)
 
 1.  Clone the repository and move into the app's source folder:
 
-> +++git clone https://github.com/\<youraccount\>/ TF-Rayfin.git+++
+     +++git clone https://github.com/<youraccount>/ TF-Rayfin.git+++ 
 
 ![](./media/image15.png)
 
@@ -299,9 +306,8 @@ incorrect.](./media/image3.png)
     then note the generated appId from the command output for use in
     later configuration steps.
 
-> +++az ad app create --display-name "helsinki-public-transport-spa" \`
->
-> --sign-in-audience AzureADMyOrg+++
+      +++az ad app create --display-name "helsinki-public-transport-spa" --sign-in-audience AzureADMyOrg+++
+
 
 ![](./media/image35.png)
 
@@ -317,8 +323,7 @@ incorrect.](./media/image3.png)
     application ID, store it in the appId variable, and then run echo
     $appId to display and verify the application ID value.
 
-+++$appId = az ad app list --display-name
-"helsinki-public-transport-spa" --query "\[0\].appId" -o tsv+++
++++$appId = az ad app list --display-name "helsinki-public-transport-spa" --query "[0].appId" -o tsv+++
 
 +++ echo $appId+++
 
@@ -381,17 +386,13 @@ incorrect.](./media/image3.png)
     file, add the required dataset ID, client ID, and tenant ID values,
     and then save the file to configure the application for production
     deployment.
-
+```
 @"
-
 VITE_PBI_DATASET_ID=
-
 VITE_PBI_CLIENT_ID=
-
 VITE_PBI_TENANT_ID=
-
 "@ | Set-Content -Path .env.production.local -Encoding utf8
-
+```
 ![](./media/image48.png)
 
 24. Checks, in order: (1) Eventstream topology — every node Running; (2)
@@ -425,14 +426,14 @@ pipeline/capacity issue, not an authentication issue.
 
 +++cd ..\\.+++
 
-+++ npm install+++
++++npm install+++
 
 ![](./media/image51.png)
 
 2.  In the Visual Studio Code terminal, run the npm run dev command to
     start the application in development mode.
 
-+++ npm run dev+++
++++npm run dev+++
 
 3.  When prompted, enter the Fabric workspace name (Rayfin-FabricXXXXXX)
     and press Enter to continue the deployment process.
@@ -463,8 +464,7 @@ pipeline/capacity issue, not an authentication issue.
     deploy the application to your Fabric workspace, and then verify
     that the deployment completes successfully.
 
-> **+++npx rayfin up --workspace-id \<workspace-id\> --tenant
-> \<tenant-id\> -y+++**
+   +++**npx rayfin up --workspace-id <workspace-id> --tenant <tenant-id> -y**+++
 
 ![](./media/image57.png)
 
@@ -504,22 +504,19 @@ pipeline/capacity issue, not an authentication issue.
     and then save the file to configure the application for production
     deployment.
 
+```
 @"
-
 VITE_PBI_DATASET_ID=
-
 VITE_PBI_CLIENT_ID=
-
 VITE_PBI_TENANT_ID=
-
 "@ | Set-Content -Path .env.production.local -Encoding utf8
+```
 
 ![](./media/image63.png)
 
 13. Rebuild and redeploy
 
-**+++npx rayfin up --workspace-id \<workspace-id\> --tenant
-\<tenant-id\> -y+++**
++++**npx rayfin up --workspace-id <workspace-id> --tenant <tenant-id> -y**+++
 
 ![](./media/image64.png)
 
