@@ -90,7 +90,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image9.png)
 
-1. In the New item dialog, enter +++app+++ in the search box, and then select **App (preview)** from the search results. Enter +++to-do-app+++ for the app name.
+1. In the New item dialog, enter +++app+++ in the search box, and then select **App (preview)** from the search results. Enter +++To do_app+++ for the app name.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image10.png)
 
@@ -113,7 +113,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 ### Task 3: Deploy the backend and the app
 
-1. In File Explorer, navigate to **C:\LabFiles**, create a new folder named +++Todo-app.+++
+1. In File Explorer, navigate to **C:\LabFiles**, create a new folder named +++Todo-app+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image16.png)
 
