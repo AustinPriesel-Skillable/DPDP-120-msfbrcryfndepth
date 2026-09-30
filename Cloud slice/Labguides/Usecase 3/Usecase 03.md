@@ -321,7 +321,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     `npm run dev`
 
-   [!Tip] If the above command fails, navigate to **C:\LabFiles\TF-Rayfin\templates\helsinki-public-transport\rayfin** and update your **Workspace ID** and the **Semantic Model Item ID** under the **connectors** in the **rayfin.yml** file and rerun the **npm run dev** command.
+    [!Tip] If the above command fails, navigate to **C:\LabFiles\TF-Rayfin\templates\helsinki-public-transport\rayfin** and update your **Workspace ID** and the **Semantic Model Item ID** under the **connectors** in the **rayfin.yml** file and rerun the **npm run dev** command.
 
 1. When prompted, enter the Fabric workspace name +++Rayfin-Fabric-Todoapp@lab.LabInstance.Id+++ and press Enter to continue the deployment process.
 
