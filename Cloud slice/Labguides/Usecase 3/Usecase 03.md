@@ -262,7 +262,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image43.png)
 
-1. In the Request API permissions pane, on the APIs my organization uses tab, enter **Power BI Service** in the search box, and then select **Power BI Service** from the search results.
+1. In the Request API permissions pane, on the APIs my organization uses tab, enter +++Power BI Service+++ in the search box, and then select **Power BI Service** from the search results.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image44.png)
 
