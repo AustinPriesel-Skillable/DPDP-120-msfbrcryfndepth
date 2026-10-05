@@ -119,11 +119,15 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image15.png)
 
-1. Change the directory
+1. Navigate to the project root directory, run the npm install command to install all required project dependencies, and wait for the installation process to complete successfully.
 
     `cd TF-Rayfin/templates/helsinki-public-transport`
 
+    `npm install`
+
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image16.png)
+
+    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image51.png)
 
 1. In the Visual Studio Code terminal, run the az login command and complete the sign-in process using your Azure account credentials.
 
@@ -145,25 +149,24 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image22.png)
 
-1. In the Visual Studio Code terminal, run the az account show --query tenantId -o tsv command, and then note the displayed tenant ID for later use in the configuration steps.
+1. In the Visual Studio Code terminal, run the az account show --query tenantId -o tsv command, and then store deployment values in variables.
 
     `az account show --query tenantId -o tsv`
 
+    `$WorkspaceId = "<YOUR-FABRIC-WORKSPACE-ID>"`
+
+    `$env:FABRIC_TENANT_ID = $TenantId`
+    `$env:FABRIC_WORKSPACE_ID = $WorkspaceId`
+
+    `Write-Host "Tenant ID    : $TenantId"`
+    `Write-Host "Workspace ID : $WorkspaceId"`
+
+
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image23.png)
-
-    `az login --tenant *{tenant-id}*`
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image24.png)
 
 1. Select your subscription
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image25.png)
-
-    `$env:FABRIC_TENANT_ID = "*{tenant-id}*"`
-
-    `$env:FABRIC_WORKSPACE_ID = "*{workspace-id}*"`
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image26.png)
 
 
 ### Task 5: Deploy the Fabric Back End
@@ -200,7 +203,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Publishes the TMDL definition under fabric/semantic-model/, rewriting every AzureDataExplorer.Contents(...) partition expression to point at this deployment's Kusto cluster URI and database. The .platform metadata file is deliberately not uploaded, since Fabric assigns that itself.
 
-1. In the Visual Studio Code terminal, run the python 04_notebook.py command, and then verify that the notebook is created successfully by confirming that the notebook name and ID are displayed in the terminal output.
+1. In the Visual Studio Code terminal, run the python 05_notebook.py command, and then verify that the notebook is created successfully by confirming that the notebook name and ID are displayed in the terminal output.
 
     `python 05_semantic_model.py`
 
@@ -208,7 +211,14 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image32.png)
 
-1. Takes ownership of the semantic model's dataset, PATCHes its gateway data source with a real Kusto access token, then switches the data source to end-user OAuth2 credentials. Skipping this step is the single most common cause of a broken lab: executeQueries returns HTTP 400 DatasetExecuteQueriesError and the app shows zeros with no further explanation.
+1. Takes ownership of the semantic model's dataset, PATCHes its gateway data source with a real Kusto access token, then switches the data source to end-user OAuth2 credentials. Skipping this step is the single most common cause of a broken lab: executeQueries returns HTTP 400 DatasetExecuteQueriesError and the app shows zeros with no further explanation. Run the below commands to capture the Semantic Model ID. 
+
+    `$state = Get-Content .\.state.json -Raw | ConvertFrom-Json`
+
+    `$SemanticModelId = $state.semantic_model_id`
+
+    `Write-Host "Semantic Model ID: $SemanticModelId"`
+
 
 1. In the Visual Studio Code terminal, run the python 06_bind_credentials.py command, and then verify that the process completes successfully by confirming that the terminal displays *final credentialType: OAuth2*.
 
@@ -304,15 +314,11 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 ### Task 6: Install dependencies and run locally
 
-1. In the Visual Studio Code terminal, navigate to the project root directory, run the npm install command to install all required project dependencies, and wait for the installation process to complete successfully.
+1. In the Visual Studio Code terminal, navigate to the project root directory, run the fabric build command before running the application.
 
-    `cd ..\.`
+    `npm run build:fabric`
 
-    `npm install`
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image51.png)
-
-    [!Note] If the 'npm install' command returns with an error or warning suggesting to use Rayfin CLI version greater than **1.35.0-alpha.1413**, run the below command to install the appropriate version on Rayfin CLI to progress further,
+    ![Note] If the 'npm install' command in your previous task has returned with an error or warning suggesting to use Rayfin CLI version greater than **1.35.0-alpha.1413**, run the below command to install the appropriate version on Rayfin CLI to progress further,
 
     `npm install -D @microsoft/rayfin-cli@1.35.1
      npm install @microsoft/rayfin-auth-provider-fabric@1.35.1 @microsoft/rayfin-client@1.35.1 @microsoft/rayfin-connector-fabric-semanticmodel@1.35.1 @microsoft/rayfin-core@1.35.1`
