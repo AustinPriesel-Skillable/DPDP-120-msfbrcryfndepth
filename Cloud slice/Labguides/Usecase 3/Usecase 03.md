@@ -156,19 +156,15 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. In the Visual Studio Code terminal, run the az account show --query tenantId -o tsv command, and then store deployment values in variables.
 
-    `az account show --query tenantId -o tsv`
+    `$TenantId = az account show --query tenantId -o tsv`
 
     `$WorkspaceId = "<YOUR-FABRIC-WORKSPACE-ID>"`
 
     `$env:FABRIC_TENANT_ID = $TenantId`
     `$env:FABRIC_WORKSPACE_ID = $WorkspaceId`
 
+
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image23.png)
-
-1. Select your subscription
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image25.png)
-
 
 ### Task 5: Deploy the Fabric Back End
 
@@ -233,7 +229,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image34.png)
 
-1. In the Visual Studio Code terminal, run the az ad app create --display-name "helsinki-public-transport-spa" --sign-in-audience AzureADMyOrg command to create a Microsoft Entra application, and then note the generated appId from the command output for use in later configuration steps.
+1. In the Visual Studio Code terminal, run the **az ad app create --display-name "helsinki-public-transport-spa" --sign-in-audience AzureADMyOrg** command to create a Microsoft Entra application, and then note the generated appId from the command output for use in later configuration steps.
 
     `az ad app create --display-name "helsinki-public-transport-spa" --sign-in-audience AzureADMyOrg`
 
@@ -288,11 +284,13 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image47.png)
 
 1. In the Visual Studio Code terminal, create the .env.production.local file, add the required dataset ID, client ID, and tenant ID values, and then save the file to configure the application for production deployment.
+
     ```
     @"
-    VITE_PBI_DATASET_ID=
-    VITE_PBI_CLIENT_ID=
-    VITE_PBI_TENANT_ID=
+    VITE_FABRIC_WORKSPACE_ID=$WorkspaceId
+    VITE_PBI_DATASET_ID=$SemanticModelId
+    VITE_PBI_CLIENT_ID=$AppId
+    VITE_PBI_TENANT_ID=$TenantId
     "@ | Set-Content -Path .env.production.local -Encoding utf8
     ```
 
@@ -313,19 +311,32 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image50.png)
 
 
-### Task 6: Install dependencies and run locally
+### Task 6: Enable/Add connectors and run locally
+
+1. Enable connectors in the current PowerShell session. Run the following commands from your root directory to set the **RAYFIN_FEATURE_FLAGS** variable and then to verify of it returns with the value as **connectors**.
+
+    `$env:RAYFIN_FEATURE_FLAGS = "connectors"`
+
+    `$env:RAYFIN_FEATURE_FLAGS`
+
+1. Add Rayfin connector for the **hslModel**
+
+    ```
+    npx rayfin connector add `
+    --type fabric-semanticmodel `
+    --workspace-id $WorkspaceId `
+    --item-id $SemanticModelId `
+    --name hslModel `
+    --operations executeQuery
+    ```
 
 1. In the Visual Studio Code terminal, navigate to the project root directory, run the fabric build command before running the application.
 
     `npm run build:fabric`
 
-    ![Note] 
-
 1. In the Visual Studio Code terminal, run the npm run dev command to start the application in development mode.
 
     `npm run dev`
-
-    [!Tip] If the above command fails, navigate to **C:\LabFiles\TF-Rayfin\templates\helsinki-public-transport\rayfin** and update your **Workspace ID** and the **Semantic Model Item ID** under the **connectors** in the **rayfin.yml** file and rerun the **npm run dev** command.
 
 1. When prompted, enter the Fabric workspace name +++Rayfin-Fabric-Todoapp@lab.LabInstance.Id+++ and press Enter to continue the deployment process.
 
@@ -349,7 +360,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. In the Visual Studio Code terminal, run the npx rayfin up --workspace-id *{workspace-id}* --tenant *{tenant-id}* command to deploy the application to your Fabric workspace, and then verify that the deployment completes successfully.
 
-    `npx rayfin up --workspace-id <workspace-id> --tenant <tenant-id> -y`
+    `npx rayfin up --workspace-id $WorkspaceId --tenant $TenantId -y`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image57.png)
 
@@ -379,9 +390,10 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ```
     @"
-    VITE_PBI_DATASET_ID=
-    VITE_PBI_CLIENT_ID=
-    VITE_PBI_TENANT_ID=
+    VITE_FABRIC_WORKSPACE_ID=$WorkspaceId
+    VITE_PBI_DATASET_ID=$SemanticModelId
+    VITE_PBI_CLIENT_ID=$AppId
+    VITE_PBI_TENANT_ID=$TenantId
     "@ | Set-Content -Path .env.production.local -Encoding utf8
     ```
 
@@ -389,7 +401,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Rebuild and redeploy
 
-    `npx rayfin up --workspace-id <workspace-id> --tenant <tenant-id> -y`
+    `npx rayfin up --workspace-id $WorkspaceId --tenant $TenantId -y`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image64.png)
 
