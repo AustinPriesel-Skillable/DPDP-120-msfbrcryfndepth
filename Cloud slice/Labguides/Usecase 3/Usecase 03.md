@@ -127,8 +127,9 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     >[!Note] If the **npm install** commands returns with an error or warning suggesting to use Rayfin CLI version greater than **1.35.0-alpha.1413**, run the below command to install the appropriate version on Rayfin CLI to progress further,
 
-     `npm install -D @microsoft/rayfin-cli@1.35.1`
-     `npm install @microsoft/rayfin-auth-provider-fabric@1.35.1 @microsoft/rayfin-client@1.35.1 @microsoft/rayfin-connector-fabric-semanticmodel@1.35.1 @microsoft/rayfin-core@1.35.1`
+    `npm install -D @microsoft/rayfin-cli@1.35.1`
+
+    `npm install @microsoft/rayfin-auth-provider-fabric@1.35.1 @microsoft/rayfin-client@1.35.1 @microsoft/rayfin-connector-fabric-semanticmodel@1.35.1 @microsoft/rayfin-core@1.35.1`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image16.png)
 
@@ -161,10 +162,11 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     `$WorkspaceId = "<YOUR-FABRIC-WORKSPACE-ID>"`
 
     `$env:FABRIC_TENANT_ID = $TenantId`
+
     `$env:FABRIC_WORKSPACE_ID = $WorkspaceId`
 
-
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image23.png)
+
 
 ### Task 5: Deploy the Fabric Back End
 
@@ -208,14 +210,13 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image32.png)
 
-1. Takes ownership of the semantic model's dataset, PATCHes its gateway data source with a real Kusto access token, then switches the data source to end-user OAuth2 credentials. Skipping this step is the single most common cause of a broken lab: executeQueries returns HTTP 400 DatasetExecuteQueriesError and the app shows zeros with no further explanation. Run the below commands to capture the Semantic Model ID. 
+1. Takes ownership of the semantic model's dataset, PATCHes its gateway data source with a real Kusto access token, then switches the data source to end-user OAuth2 credentials. Skipping this step is the single most common cause of a broken lab: executeQueries returns HTTP 400 DatasetExecuteQueriesError and the app shows zeros with no further explanation. Run the below commands to capture the Semantic Model ID.
 
     `$state = Get-Content .\.state.json -Raw | ConvertFrom-Json`
 
     `$SemanticModelId = $state.semantic_model_id`
 
     `Write-Host "Semantic Model ID: $SemanticModelId"`
-
 
 1. In the Visual Studio Code terminal, run the python 06_bind_credentials.py command, and then verify that the process completes successfully by confirming that the terminal displays *final credentialType: OAuth2*.
 
@@ -456,7 +457,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 ### Task 7: Clean up resources
 
-1. Select your workspace, the +++Rayfin_Fabric@lab.LabInstance.Id+++ from the left-hand navigation menu. It opens the workspace item view.
+1. Select your workspace, the **Rayfin_Fabric@lab.LabInstance.Id** from the left-hand navigation menu. It opens the workspace item view.
 
 1. Select the ... option under the workspace name and select **Workspace settings**.
 
