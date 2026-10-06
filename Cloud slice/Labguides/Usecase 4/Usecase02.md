@@ -1,4 +1,4 @@
-# **Usecase 4 - Build ZAVA Interior Designing App with intelligent insights using Fabric IQ,Data Agents, and Rayfin​**
+# Usecase 4 - Build ZAVA Interior Designing App with intelligent insights using Fabric IQ,Data Agents, and Rayfin​
 
 ## Scenario
 
@@ -26,28 +26,31 @@ In this lab, you will build the **ZAVA Interior Designing App**, provision a man
 - Configure and publish a Fabric Data Agent.
 - Use natural language queries to generate intelligent business insights.
 - Understand how Fabric Intelligence, Data Agents, and Rayfin work together to accelerate AI-powered application development
-
 - Navigate to the GitHub with this link +++https://github.com/+++ and click on **Sign up** to proceed further.
+
 
 ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/imga1.png)
 
 - Now, to create a new GitHub account, enter the **email**, **password** and a unique **username** and click on **Continue** button.
+
 
 ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/imga2.png)
 
 - Start the **verification** **puzzle** by following the instruction on the screen. Click on **Submit.**
 - Enter the **verification code** you've received on your mail.
 
+
 ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/imga3.png)
 
 - Now, with your credentials sign-in to GitHub and click on **Sign in.**
+
 
 ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/imga4.png)
 
 - You have successfully created a new account on GitHub.
 
 
-## **Exercise 1: Set Up Your Environment**
+## Exercise 1: Set Up Your Environment
 
 ### Task 1: Create a Fabric workspace
 
@@ -88,7 +91,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image8.png)
 
-1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like +++https://app.fabric.microsoft.com/groups/*{workspace-id}*.+++
+1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like https://app.fabric.microsoft.com/groups/*{workspace-id}*.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image9.png)
 
@@ -135,9 +138,9 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image18.png)
 
 
-## **Exercise 2: Bootstrap the App from a Template**
+## Exercise 2: Bootstrap the App from a Template
 
-### **Task 1: Clone the lab repository**
+### Task 1: Clone the lab repository
 
 1. Open your browser, navigate to the address bar, type or paste the following URL: +++https://github.com/technofocus-pte/ship-ai-apps-fast-with-a-managed-backend-in-microsoft-fabric.git+++
 
@@ -160,7 +163,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image22.png)
 
 
-### **Task 2: Bootstrap a new Rayfin project from the Field Services template**
+### Task 2: Bootstrap a new Rayfin project from the Field Services template
 
 1. Type (do not run yet) the following command, leaving *{workspace-uri}* in place for now. Adjust the --template path if your clone is elsewhere:
 
@@ -183,7 +186,9 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     `npx rayfin --version`
 
     `npm list @microsoft/rayfin-cli`
+
     `npm list @microsoft/rayfin-core`
+
     `npm list @microsoft/rayfin-client`
 
 1. Create a new **field-services-app** folder in your current directory and copy the template files into it
@@ -398,7 +403,7 @@ The **rayfin up** command provisions a managed backend (database, auth, data API
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image43.png)
 
-    >[!Note] If deployment fails with error **Static hosting requires Rayfin CLI version '1.35.0-alpha.1413' or later**, run +++npm install -D @microsoft/rayfin-cli@1.35.1+++ and then run the **npx rayfin up --encryption-fallback-enabled** command.
+    >[!Note] If deployment fails with error **Static hosting requires Rayfin CLI version '1.35.0-alpha.1413' or later**, run `npm install -D @microsoft/rayfin-cli@1.35.1` and then run the **npx rayfin up --encryption-fallback-enabled** command.
 
 1. Watch the terminal for progress on each step. The first run takes a couple of minutes.
 
@@ -491,12 +496,11 @@ The same app also includes a manager view.
 
 1. Review the manager view and create a new work order by completing the form and selecting **Create order**.
 
-    Name: +++Adam+++
+    Name: `Adam`
 
-    Address: +++1234 Example Street 3 Suite 100 Springfield,IL 627045
-    United States+++
+    Address: `1234 Example Street 3 Suite 100 Springfield,IL 627045 United States`
 
-    Task: +++Hang large painting in living room+++
+    Task: `Hang large painting in living room`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image58.png)
 
@@ -567,7 +571,7 @@ Let's take a look at the deployed app and database in the Microsoft Fabric porta
 
 1. Open the Microsoft Fabric portal at +++https://app.fabric.microsoft.com+++.
 
-1. Open the +++Fabric-Apps-@lab.LabInstance.Id+++ workspace you created in Exercise 1.
+1. Open the **Fabric-Apps-@lab.LabInstance.Id** workspace you created in Exercise 1.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image68.png)
 
@@ -808,7 +812,7 @@ The implementation request asked GitHub Copilot CLI to generate code without app
 1. In a terminal in the **field-services-app** folder, run the TypeScript validation before db apply. After the schema apply succeeds, redeploy.
 
     `npx tsc -b`
-   
+  
     `npx tsc --noEmit`
 
     `npx rayfin up db apply`
@@ -991,7 +995,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image127.png)
 
-1. Select **+ New item** from the top menu and in the dialog, search and select +++Semantic model+++.
+1. Select **+ New item** from the top menu and in the dialog, search and select **Semantic model**.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image128.png)
 
@@ -1079,7 +1083,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
 ### Task 2: Create a Fabric data agent
 
-1. From the left navigation bar, select +++Fabric-Apps@lab.LabInstance.Id.+++
+1. From the left navigation bar, select **Fabric-Apps@lab.LabInstance.Id.**
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image148.png)
 
@@ -1087,7 +1091,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image149.png)
 
-1. In the dialog, search for and select +++Data agent+++.
+1. In the dialog, search for and select **Data agent**.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image150.png)
 
@@ -1126,7 +1130,7 @@ Use the agent's chat interface to ask questions about your seeded production dat
 
 1. In the agent chat pane, ask the following questions one at a time and review the results:
 
-    +++How many work orders do we have in total?+++
+    `How many work orders do we have in total?`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image157.png)
 
@@ -1181,7 +1185,7 @@ Use the agent's chat interface to ask questions about your seeded production dat
 
 ### Task 4: Clean up resources
 
-1. Select your workspace, the +++Fabric_Apps@lab.LabInstance.Id+++ from the left-hand navigation menu. It opens the workspace item view.
+1. Select your workspace, the **Fabric_Apps@lab.LabInstance.Id** from the left-hand navigation menu. It opens the workspace item view.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image171.png)
 
