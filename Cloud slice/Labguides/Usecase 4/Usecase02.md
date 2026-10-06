@@ -164,7 +164,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
 1. Type (do not run yet) the following command, leaving *{workspace-uri}* in place for now. Adjust the --template path if your clone is elsewhere:
 
-    `npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template " ./template/field-services-app" --workspace-uri <workspace-uri>`
+    `npm create -y @microsoft/rayfin@latest -- --project-name field-services-app --template "./template/field-services-app" --workspace-uri <workspace-uri>`
 
     > Example:
     >
@@ -175,6 +175,16 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image24.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image25.png)
+
+1. Run the Rayfin version validation using below command,
+
+    `cd .\field-services-app`
+
+    `npx rayfin --version`
+
+    `npm list @microsoft/rayfin-cli`
+    `npm list @microsoft/rayfin-core`
+    `npm list @microsoft/rayfin-client`
 
 1. Create a new **field-services-app** folder in your current directory and copy the template files into it
 
@@ -376,13 +386,19 @@ The **rayfin up** command provisions a managed backend (database, auth, data API
 
 1. Use the Visual Studio Code terminal from the previous exercise. It should already be in the **field-services-app** folder.
 
-1. Provision the Fabric backend by running:
+1. Run the TypeScript validation gate first, if it succeeds, provision the Fabric backend:
+
+    `npx tsc -b`
+
+    `npx tsc --noEmit`
 
     `npx rayfin up --encryption-fallback-enabled`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image42.png)
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image43.png)
+
+    >[!Note] If deployment fails with error **Static hosting requires Rayfin CLI version '1.35.0-alpha.1413' or later**, run +++npm install -D @microsoft/rayfin-cli@1.35.1+++ and then run the **npx rayfin up --encryption-fallback-enabled** command.
 
 1. Watch the terminal for progress on each step. The first run takes a couple of minutes.
 
@@ -666,7 +682,7 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
     1. Be located at rayfin/data/workOrderComment.ts
     2. Have these fields: id (uuid), content (text, min:1 max:1000), userId (text), createdAt (date), workOrderId (uuid)
     3. Include a one-to-one relationship to WorkOrder via the workOrderId field
-    4. Use @entity() and @role('authenticated', 'read', 'create') decorators
+    4. Use @entity() and @role('authenticated', ['read', 'create']) decorators
     5. Register the Comment entity in rayfin/data/schema.ts (import it, add to FieldServiceSchema type, add to schema array)
     6. Ensure all other code that uses client.data.Comment has the correct imports
 
@@ -683,11 +699,11 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
 
 1. If you face any issue where Copilot only shows the code instead of creating the files, create the files manually
 
-1. In the Explorer, right-click rayfin/data/ and select **New File**.
+1. Skip this step if you already have a 'WorkOrderComment.ts' file present under **rayfin/data/**. In the Explorer, right-click rayfin/data/ and select **New File**.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image92.png)
 
-1. Name it +++WorkOrderComment.ts.+++
+1. Name it +++WorkOrderComment.ts+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image93.png)
 
@@ -702,18 +718,28 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
       text,
       uuid,
     } from '@microsoft/rayfin-core';
-
+    
     import { WorkOrder } from './WorkOrder.js';
-
+    
     @entity()
-    @role('authenticated', '*')
+    @role('authenticated', ['read', 'create'])
     export class Comment {
       @uuid() id!: string;
-      @text({ min: 1, max: 1000 }) content!: string;
-      @text() userId!: string;
-      @uuid() workOrderId!: string;
-      @one(() => WorkOrder, { optional: true }) workOrder?: WorkOrder;
-      @date() createdAt!: Date;
+    
+      @text({ min: 1, max: 1000 })
+      content!: string;
+    
+      @text()
+      userId!: string;
+    
+      @date()
+      createdAt!: Date;
+    
+      @uuid()
+      workOrderId!: string;
+    
+      @one(() => WorkOrder)
+      workOrder!: WorkOrder;
     }
     ```
 
@@ -727,14 +753,18 @@ Use GitHub Copilot CLI to generate the comments feature without applying the bac
     import { ServicePro } from './ServicePro.js';
     import { WorkOrder } from './WorkOrder.js';
     import { Comment } from './WorkOrderComment.js';
-
+    
     export type FieldServiceSchema = {
       ServicePro: ServicePro;
       WorkOrder: WorkOrder;
       Comment: Comment;
     };
-
-    export const schema = [ServicePro, WorkOrder, Comment];
+    
+    export const schema = [
+      ServicePro,
+      WorkOrder,
+      Comment,
+    ];
     ```
 
 
@@ -775,9 +805,15 @@ The implementation request asked GitHub Copilot CLI to generate code without app
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image100.png)
 
-1. In a terminal in the **field-services-app** folder, apply the database schema update:
+1. In a terminal in the **field-services-app** folder, run the TypeScript validation before db apply. After the schema apply succeeds, redeploy.
+
+    `npx tsc -b`
+   
+    `npx tsc --noEmit`
 
     `npx rayfin up db apply`
+
+    `npx rayfin up --encryption-fallback-enabled`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image101.png)
 
@@ -793,7 +829,22 @@ The implementation request asked GitHub Copilot CLI to generate code without app
 
 1. In the Explorer pane, navigate to ***src* \> *services* \> *rayfin* and open the *RayfinFieldService.ts*** file. Review or update the highlighted workOrder line – 421. Update the statement as required for the lab exercise.
 
-    `await client.data.WorkOrder.update({ id: workOrderId }, { note: nextNote, updatedAt: new Date() });`
+    ```
+    async updateWorkOrderNote(
+      workOrderId: string,
+      nextNote: string
+    ): Promise<WorkOrder> {
+      const client = getRayfinClient();
+    
+      return client.data.WorkOrder.update(
+        { id: workOrderId },
+        {
+          note: nextNote,
+          updatedAt: new Date(),
+        }
+      );
+    }
+    ```
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image105.png)
 
@@ -879,7 +930,7 @@ By completing this exercise, you will:
 
 The template includes an authenticated admin page at **admin** that can generate a larger dataset from src/data/field-service-seed.json.
 
-1. In the hosted app, navigate directly to admin by appending it to the hosting URL.
+1. In the hosted app, navigate directly to admin by appending +++/_admin/+++ to the hosting URL.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image122.png)
 
@@ -940,7 +991,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image127.png)
 
-1. Select **+ New item** from the top menu and in the dialog, search and select **Semantic model**.
+1. Select **+ New item** from the top menu and in the dialog, search and select +++Semantic model+++.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image128.png)
 
@@ -958,7 +1009,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
 1. Select the **ServicePros**, **WorkOrders**, and **WorkOrderComments** tables to include in the model and select **Confirm** to create the model.
 
-    >[!Tip] If you don't see the **WordOrderComments** table when creating a semantic model please wait a few minutes, refresh your page and create the semantic model again.
+    >[!Tip] If you don't see the **WorkOrderComments** table when creating a semantic model please wait a few minutes, refresh your page and create the semantic model again.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image132.png)
 
@@ -1036,7 +1087,7 @@ A semantic model gives the data agent a clean, well-described view of your data 
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image149.png)
 
-1. In the dialog, search for and select **Data agent**.
+1. In the dialog, search for and select +++Data agent+++.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image150.png)
 
@@ -1075,7 +1126,7 @@ Use the agent's chat interface to ask questions about your seeded production dat
 
 1. In the agent chat pane, ask the following questions one at a time and review the results:
 
-    How many work orders do we have in total?
+    +++How many work orders do we have in total?+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%204/media/image157.png)
 
