@@ -1,4 +1,4 @@
-# Usecase 01-Develop a CRUD-enabled Todo application with Rayfin in Fabric Apps
+# Usecase 01 - Develop a CRUD-enabled Todo application with Rayfin in Fabric Apps
 
 ## Introduction
 
@@ -79,7 +79,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image7.png)
 
-1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like https://app.fabric.microsoft.com/groups/*{workspace-id}*.
+1. Once the workspace loads, copy the URL from the browser address bar. Remove anything after the workspace ID. The URL should look like: https://app.fabric.microsoft.com/groups/*{workspace-id}*.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image8.png)
 
@@ -139,7 +139,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image22.png)
 
-1. Enter **Y**
+1. Enter +++Y+++
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image23.png)
 
@@ -159,7 +159,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image27.png)
 
-1. Copy the local frontend URL shown in the terminal, which should be similar to +++http://localhost:5173+++, and open it in a new browser tab.
+1. Copy the local frontend URL shown in the terminal, which should be similar to http://localhost:5173, and open it in a new browser tab.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image28.png)
 
@@ -227,7 +227,7 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image43.png)
 
-1. In the Fabric portal, select the *Rayfin-+++Fabric-Todoapp@lab.LabInstance.Id+++* workspace from the navigation pane.
+1. In the Fabric portal, select the *Rayfin-**Fabric-Todoapp@lab.LabInstance.Id*** workspace from the navigation pane.
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%201/media/image44.png)
 
