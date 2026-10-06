@@ -125,10 +125,10 @@ In this task, you create a Fabric workspace. The workspace contains all the item
 
     `npm install`
 
-   >[!Note] If the **npm install** commands returns with an error or warning suggesting to use Rayfin CLI version greater than **1.35.0-alpha.1413**, run the below command to install the appropriate version on Rayfin CLI to progress further,
+    >[!Note] If the **npm install** commands returns with an error or warning suggesting to use Rayfin CLI version greater than **1.35.0-alpha.1413**, run the below command to install the appropriate version on Rayfin CLI to progress further,
 
-    `npm install -D @microsoft/rayfin-cli@1.35.1`
-    `npm install @microsoft/rayfin-auth-provider-fabric@1.35.1 @microsoft/rayfin-client@1.35.1 @microsoft/rayfin-connector-fabric-semanticmodel@1.35.1 @microsoft/rayfin-core@1.35.1`
+     `npm install -D @microsoft/rayfin-cli@1.35.1`
+     `npm install @microsoft/rayfin-auth-provider-fabric@1.35.1 @microsoft/rayfin-client@1.35.1 @microsoft/rayfin-connector-fabric-semanticmodel@1.35.1 @microsoft/rayfin-core@1.35.1`
 
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image16.png)
 
