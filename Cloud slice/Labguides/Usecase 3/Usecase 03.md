@@ -163,10 +163,6 @@ In this task, you create a Fabric workspace. The workspace contains all the item
     `$env:FABRIC_TENANT_ID = $TenantId`
     `$env:FABRIC_WORKSPACE_ID = $WorkspaceId`
 
-    `Write-Host "Tenant ID    : $TenantId"`
-    `Write-Host "Workspace ID : $WorkspaceId"`
-
-
     ![](https://raw.githubusercontent.com/technofocus-pte/msfbrcryfndepth/refs/heads/main/Cloud%20slice/Labguides/Usecase%203/media/image23.png)
 
 1. Select your subscription
